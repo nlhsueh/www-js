@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+
+        const student = {
+            101: "john",
+            102: "Mary",
+            103: "Alice",
+        }
+
+        const teacher = new Map();
+        teacher.set("t001", 'Nick');
+        teacher.set("t002", 'Jie');
+        teacher.set("t003", 'Jonathan');
+
+        function sayHi() {
+            msg = "";
+            teacher.forEach(function (value, key) {
+                msg += `teacher ${key} is ${value}<br>`;
+            });
+            document.getElementById("hi").innerHTML = msg;
+
+            msg = "";
+            for ([key, value] of teacher.entries()) {
+                msg += `teacher ${key} is ${value}<br>`;
+            }
+            document.getElementById("hi2").innerHTML = msg;
+
+            msg = "";
+            for (p in student) {
+                msg += `student ${p} is ${student[p]}<br>`;
+            }
+            document.getElementById("hi3").innerHTML = msg;
+        }
+    </script>
+</head>
+
+<body onload="sayHi()">
+    <h2>Hi- using Map.forEach</h2>
+    <p id="hi"></p>
+    <h2>Hi- using Map.entries</h2>
+    <p id="hi2"></p>
+    <h2>Hi- object properties</h2>
+    <p id="hi3"></p>
+</body>
+
+</html>

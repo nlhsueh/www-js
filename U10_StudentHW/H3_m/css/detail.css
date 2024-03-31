@@ -1,0 +1,96 @@
+#head{
+    font-size: 50px;
+}
+#topic{
+    padding: 0px 30px;
+    font-size: 30px;
+}
+
+.format-error{
+    border: solid 1px red !important;
+}
+[id*=warn]{
+    color: red;
+}
+div[id*=Q] p{
+    font-size: 18px;
+    text-indent: 2em;
+    margin: 5px;
+}
+p[id*=ans], p[id*=warn]{
+    font-size: 24px;
+    text-indent: 0 !important;
+}
+
+table, td{
+    border: solid 1px #000;
+}
+table{
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+td{
+    padding: 10px;
+    font-size: 18px;
+}
+
+input[type=text] {
+    width: 150px;
+    padding: 5px;
+    font-size: 18px;
+    border: solid #CCCCCC 1px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px rgba(66,66,66,.58);
+    text-shadow: 0px 0px 0px rgba(66,66,66,.0);
+    outline: none;
+}
+
+input[type=button] {
+	box-shadow:inset 0px 0px 3px -4px #c5daed;
+	background:linear-gradient(to bottom, #92c7fc 5%, #3280cf 100%);
+	background-color:#92c7fc;
+	border-radius:10px;
+	border:1px solid #63adf7;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:6px 21px;
+	text-decoration:none;
+	text-shadow:3px 3px 0px #4d83b8;
+}
+input[type=button]:hover {
+	background:linear-gradient(to bottom, #3280cf 5%, #92c7fc 100%);
+	background-color:#3280cf;
+}
+input[type=button]:active {
+	position:relative;
+	top:1px;
+}
+
+.answer{
+    border: solid 2px #D7EAC8;
+    background-color: #DEEFD7;
+    color: #3C773D;
+    padding: 10px;
+    width: 80%;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.explanation{
+    border: solid 2px #BCE8F1;
+    background-color: #D9EDF7;
+    color: #6B9CB3;
+    padding: 10px;
+    width: 80%;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+.explanation p{
+    color: #507686;
+}

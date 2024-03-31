@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        label {
+            display: block;
+        }
+    </style>
+    <script>
+        function add() {
+            let x = document.getElementById("n1").value;
+            let y = document.getElementById("n2").value;
+            window.alert(x + y);
+            p = parseInt(x);
+            q = parseInt(y)
+            window.alert(p + q);
+        }
+    </script>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="number" id="n1" value="12">
+        <input type="number" id="n2" value="34">
+        <input type="button" onclick="add()" value="Add()">
+    </form>
+
+</body>
+
+</html>

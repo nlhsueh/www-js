@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <script>
+
+        console.log("Demo the keys of an object");
+        const students = [
+            { name: "john", tall: 178 },
+            { name: "nick", tall: 172 },
+            { name: "mary", tall: 164 }
+        ];
+
+        for (let st of students) {
+            // for each st object, print its <attr: value>
+            for (let attr in st) {
+                console.log(attr, ":", st[attr]);
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <p id="demo"></p>
+
+    <script>
+        function prime(x) {
+            if (x < 2) return false;
+            if (x == 2) return true;
+            let i = 2;
+            let isPrime = true;
+            // debugger;
+            while (i <= x - 1) {
+                console.log(i.toString());
+                if (x % i == 0) {
+                    return false;
+                }
+                i++;
+            }
+            return isPrime;
+        }
+
+        function prime2(x) {
+            if (x < 2) return false;
+            if (x == 2) return true;
+            let i = 2;
+            let isPrime = true;
+            for (let i=2; i<=x-1; i++) {
+                if (x%i == 0) {
+                    // not prime
+                    console.log(x + " not a prime");
+                    isPrime = false;
+                    break;
+                }
+            }
+            return isPrime;
+        }
+
+        let v = 12;
+        document.getElementById("demo").innerHTML = v.toString() + " is prime: " + prime2(12);
+
+    </script>
+</body>
+
+</html>

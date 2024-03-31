@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H3 Js</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="question">
+        <h2>
+            1. 乘法 ＆ 除法
+        </h2>
+        <p class="ps">
+            輸入兩個數字，點擊按鈕將會顯示數字的相乘與相除。
+        </p>
+        <input type='text' id='first_number'>
+        <input type="text" id="second_number">
+        <p>
+            <button onclick="multiply()" type="button">multiple</button>
+            <button onclick="divide()" type="button">divide</button>
+        </p>
+        multiple:
+        <span id="triangle_multiply"></span>
+        <br>divide:
+        <span id="triangle_divide"></span>
+    </div>
+
+    <div class="question">
+        <h2>
+            2. 三角形面積
+        </h2>
+        <p class="ps">
+            輸入三角形的三邊長，將會顯示三角形的面積以及是什麼三角形
+        </p>
+        <input type='text' id='q2_1'>
+        <input type="text" id="q2_2">
+        <input type="text" id="q2_3">
+        <p>
+            <button onclick="triangle()">Calculate</button>
+        </p>
+        Triangle Area：
+        <span id="triangle_area">
+            area
+        </span>
+        <p>
+            <span id="triangle">
+            </span>
+        </p>
+    </div>
+
+    <div class="question">
+        <h2>
+            3. 費柏納西
+        </h2>
+        <p class="ps">
+            輸入一個數字將會顯示這個數字於fibonacci數列的位置。
+        </p>
+        <form onsubmit="return false">
+            <input type="text" id="q3_1">
+            <p>
+                <button onclick="q3()" type="button">Calculate</button>
+            </p>
+            <span id="fibonacci"></span>
+        </form>
+    </div>
+
+    <div class="question">
+        <h2>
+            4. 質數 1
+        </h2>
+        <p class="ps">
+            輸入一個數字，將會顯示他是否為質數。
+        </p>
+        <input type="text" id="q4_1">
+        <p>
+            <button onclick="q4()">prime number 1</button>
+        </p>
+        <span id="prime1"></span>
+    </div>
+
+    <div class="question">
+        <h2>
+            5. 質數 2
+        </h2>
+        <p class="ps">
+            輸入一個數字，將會顯示這個範圍內的所有質數。
+        </p>
+        <input type="text" id="q5_1">
+        <p>
+            <button onclick="q5()">prime number 2</button>
+        </p>
+        <span id="prime2" style="word-break:break-all; word-wrap:break-word;"></span>
+    </div>
+
+    <div class="question">
+        <h2>
+            6. 身分證
+        </h2>
+        <p class="ps">
+            設計一個 HTML可以輸入身分證與 email。(1) 當按下 提交 時會檢查身分證是否正確 (2) 切換到 email 時就會檢查。
+        </p>
+        <input type="text" placeholder="id" id="ssn" onchange="q6()">
+        <input type="text" placeholder="email" id="email">
+        <p>
+            <button onclick="q6()">Check</button>
+        </p>
+        <span id="ssn_result" style="word-break:break-all; word-wrap:break-word;"></span>
+    </div>
+
+
+    <div class="question">
+        <h2>
+            7. 字串環
+        </h2>
+        <p class="ps">
+            寫一個程式，每按一下 button。 IECS FCU => ECS FCUI => CS FCUIE => …
+        </p>
+        <input type="text" id="circle-string" value="IECS FCU">
+        <p>
+            <button onclick="q7()">Go</button>
+        </p>
+        <span id="circle_res" style="word-break:break-all; word-wrap:break-word;"></span>
+    </div>
+
+
+
+    <div class="question">
+        <h2>
+            8. 去除標點
+        </h2>
+        <p class="ps">
+            點擊按鈕將會顯示去掉標點符號的字串陣列。
+        </p>
+        師太：「和尚、道長你們一起上吧，我趕時間。」
+        <p>
+            <button onclick="q8()">Change</button>
+        </p>
+        <span id="remove_symbol">
+        </span>
+    </div>
+
+    <div class="question">
+        <h2>
+            10. 猜數字
+        </h2>
+        <p class="ps">
+            這是一個猜數字遊戲，範圍為1~100，輸入數字後將會顯示這個數字為答案的太大或太小。
+        </p>
+        <input type="text" id="q10_1">
+        <p></p>
+
+        <p>
+            <button onclick="q10()">guess number </button>
+        </p>
+        <span id="guess_number"></span>
+    </div>
+
+    <div class="question">
+        <h2>
+            11. 溫度換算
+        </h2>
+        <p class="ps">
+            這是攝氏轉華氏的換算，可以透過add增加溫度的資料。
+        </p>
+        <input type="text" id="temperature">
+        <button onclick="add_temperature()">Add</button>
+        <p>
+            <button onclick="q11()">Calculate</button>
+        </p>
+        <span id="transform_temperature" style="word-break:break-all; word-wrap:break-word;"></span>
+    </div>
+
+    <div class="question">
+        <h2>
+            12. 副檔名
+        </h2>
+        <p class="ps">
+            輸入檔名後，將會顯示出他的副檔名。
+        </p>
+        <input type="text" id="q12">
+        <p>
+            <button onclick="q12()">find</button>
+        </p>
+        副檔名：
+        <span id="file"></span>
+    </div>
+
+
+
+    <div class="question">
+        <h2>
+            14. 平方和
+        </h2>
+        <p class="ps">
+            存有一個數字陣列，可以透過Add增加數字，按下計算後將會顯示所有數字的平方和。
+        </p>
+        <input type="text" id="add_number">
+        <button onclick="add_number()">Add</button>
+        <p>
+            <span id="square" style="word-break:break-all; word-wrap:break-word;"></span>
+        </p>
+        <p>
+            <button onclick="q14()">Calculate</button>
+        </p>Sum:
+        <span id="square_sum"></span>
+    </div>
+
+    <div class="question">
+        <h2>
+            15. 過濾人口
+        </h2>
+        <p>使用 array.filter 挑選出人口小於 300 萬的都市</p>
+        <button onclick="q15()">Go</button>
+        <span id="q15_res"></span>
+
+    </div>
+
+    <div class="question">
+        <h2>
+            16. 排序人口
+        </h2>
+        <p>同上，使用儘可能少的指令，印出人口小於 300 萬，由人口少到多排序印出 都市名與人口數</p>
+        <button onclick="q16()">Go</button>
+        <div id="q16_res">
+        </div>
+
+    </div>
+
+
+    <div class="information">
+        李柏霖
+        <br>
+        D0947701
+    </div>
+</body>
+
+</html>

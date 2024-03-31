@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<style type="text/css">
+    .center {
+        max-width: 600px;
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+    }
+
+    label,
+    input {
+        display: block;
+    }
+
+    label,
+    fieldset {
+        margin-bottom: 10px;
+    }
+</style>
+
+<body class="center">
+    <script>
+        var persons = new Map();        // save all persons' data
+        var over_persons = new Map();   // over-weight persons
+        var under_persons = new Map();  // under-weight persons
+        var normal_persons = new Map(); // not over and not under
+
+        /**
+         * Add the person to the person Map.
+         * key is Name, value is array of [height, weight, bmi]
+         */
+        function addToPersonMap(person, h, w, bmi) {
+            persons.set(person, [h, w, bmi]);
+            if (bmi < 18.5) {
+                under_persons.set(person, [h, w, bmi]);
+            }
+            else if (bmi > 25) {
+                over_persons.set(person, [h, w, bmi]);
+            }
+            else normal_persons.set(person, [h, w, bmi]);
+        }
+
+        /**
+         * Retrieve the person data in the form, 
+         * and save to Persons Map
+         */
+
+        function addPerson() {
+
+            let pname = document.forms["bmi"]["pname"].value;
+            let h1 = parseInt(document.forms["bmi"]["h1"].value);
+            let h2 = parseInt(document.forms["bmi"]["h2"].value);
+            let w = document.forms["bmi"]["weight"].value;
+
+            if (pname == "") {
+                alert("Name is required");
+                return;
+            }
+
+            let h = (h1 * 10 + h2) / 100;
+            bmi = w / (h * h);
+            bmi = bmi.toFixed(2);
+
+            newPersonStr = `<strong>${pname}</strong>: ${h}cm, ${w}kg, BMI is <strong>${bmi}</strong>`
+
+            let newPerson = document.getElementById("p-new-person")
+            newPerson.innerHTML = newPersonStr + " is added!"
+
+            document.forms["bmi"]["pname"].value = ""; //reset the field
+
+            // add the person to the Map
+            addToPersonMap(pname, h, w, bmi);
+        }
+
+        /** 
+         * For testing, we randomly generate persons, 
+         * save to Persons Map, and showStat()
+         */
+        function randomInput() {
+            const minH = 150; const maxH = 180;
+            const minW = 50; const maxW = 70;
+            for (let i = 0; i < 50; i++) {
+                let pname = 'P' + i.toString();
+                let h = ((Math.random() * (maxH - minH) + minH) / 100).toFixed(1);
+                let w = (Math.random() * (maxW - minW) + minW).toFixed(1);
+                let bmi = (w / (h * h)).toFixed(2);
+                addToPersonMap(pname, h, w, bmi);
+            }
+            // showStat();
+        }
+
+        /**
+         * Return the HTML li string from the PersonMap
+         */
+        function personString(personMap) {
+            text = ""
+            for (let [u, d] of personMap) {
+                text += `<li><strong>${u}</strong>: ${d[0]}cm, ${d[1]}kg, BMI: ${d[2]}</li>`;
+            }
+            return text;
+        }
+
+        /**
+         * Hide the statistics of the persons' BMI
+         * It will also (1) show the input form
+         *              (2) switch the button of input/statistics
+        */
+
+        function hideStat() {
+            let div_stat = document.getElementById("div-stat");
+            let form_BMI = document.getElementById("form-BMI");
+            let btn_show_stat = document.getElementById("btn-show-stat");
+
+            hideElement(div_stat);
+            showElement(form_BMI);
+            btn_show_stat.value = "Show Statistics";
+            btn_show_stat.onclick = function () { showStat(); };
+        }
+
+        /**
+         * Show the statistics of the persons' BMI
+         * It will also (1) hide the input form
+         *              (2) switch the button of input/statistics
+        */
+
+        function showStat() {
+            let div_stat = document.getElementById("div-stat");
+            let form_BMI = document.getElementById("form-BMI");
+            let btn_show_stat = document.getElementById("btn-show-stat");
+            showElement(div_stat);
+            hideElement(form_BMI);
+            btn_show_stat.value = "Input data";
+            btn_show_stat.onclick = function () { hideStat(); };
+
+            let summary = document.getElementById("p-summary");
+            summary.innerHTML = `Over-weight: ${over_persons.size}; Under-weight: ${under_persons.size}; Normal: ${normal_persons.size}`;
+
+            document.getElementById("ul-over-w").innerHTML = `${personString(over_persons)}`;
+
+            document.getElementById("ul-under-w").innerHTML = `${personString(under_persons)}`;
+
+            document.getElementById("ul-normal-w").innerHTML = `${personString(normal_persons)}`;
+        }
+
+        /**
+         * Show an HTML element
+         */
+
+        function showElement(element) {
+            element.removeAttribute("hidden");
+        }
+
+        /**
+         * Hide an HTML element
+         */
+
+        function hideElement(element) {
+            element.setAttribute("hidden", true);
+        }
+
+    </script>
+
+    <h1 style="text-align: center;">BMI System</h1>
+
+    <span style="display:flex; float:right">
+        <input type="Button" id="btn-show-stat" value="Show Statistics" onclick="showStat()">
+    </span>
+    <br>
+
+    <form name="bmi" id="form-BMI">
+        <p>Please input and submit the Name, Weight and Height</p>
+
+        <fieldset>
+            <legend>Input data for BMI calculation</legend>
+            <label for="pname"> Name:
+                <input type="text" id="pname" name="pname" value="" required>
+            </label>
+
+            <label for="weight"> Weight (kg):
+                <input type="number" id="weight" name="weight" value="60" min="30" max="200">
+            </label>
+
+            <label for="height"> Height (cm):
+                <select id="h1">
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                </select>
+                <select id="h2">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </label>
+            <input type="Button" value="Submit" onclick="addPerson()" style="float: right;">
+        </fieldset>
+
+        <input type="Button" value="Random Input" onclick="randomInput()">
+        <p id="p-new-person"></p>
+    </form>
+
+
+    <div id="div-stat" hidden>
+        <h2>Statistics: </h2>
+        <p id="p-summary"></p>
+
+        <hr>
+
+        <h3 style="color:red">Over weight, need ⛹️</h3>
+        <ul id="ul-over-w"></ul>
+
+        <hr>
+
+        <h3 style="color:purple">Under weight, need 🍖</h3>
+        <ul id="ul-under-w"></ul>
+
+        <hr>
+
+        <h3 style="color:green">👍 Normal weight 👍</h3>
+        <ul id="ul-normal-w"></ul>
+    </div>
+
+</body>
+
+</html>

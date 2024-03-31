@@ -1,0 +1,73 @@
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+#sider{
+    text-align: center;
+    height: 100%;
+    width: 15%;
+    margin-top: 0;
+    position: fixed;
+    overflow-y: scroll;
+    z-index: 99;
+    background-color: #8FD2FF;
+}
+#sider > ul{
+    margin: 0;
+    padding: 0;
+}
+#sider li{
+    list-style-type: none;
+    font-size: 25px;
+    padding: 25px 50px;
+    border-top: dashed 3px #3d6f9e;
+}
+#sider li:hover{
+    background-clip: border-box;
+    background-color: #53AAE4;
+}
+#sider::-webkit-scrollbar{
+    width: 12px;
+}
+#sider::-webkit-scrollbar-track {
+    background-color: #eff8ff;
+}
+#sider::-webkit-scrollbar-thumb {
+    background-color: #3d6f9e; 
+}
+
+#content{
+    height: 100%;
+    width: 85%;
+    margin-top: 0;
+    margin-left: 15%;
+    text-align: center;
+    position: fixed;
+    overflow-y: scroll;
+}
+#content::-webkit-scrollbar{
+    width: 12px;
+}
+#content::-webkit-scrollbar-track {
+    background-color: #eff8ff;
+}
+#content::-webkit-scrollbar-thumb {
+    background-color: #3d6f9e; 
+}
+
+div[id*=Q]{
+    width: 60%;
+    margin-left: 20%;
+    padding: 20px;
+    text-align: left;
+}
+hr{
+    width: 80%;
+    border: 0;
+    border-top: dashed 2px #3d6f9e;
+}
+
+.empty{
+    padding: 20px;
+}

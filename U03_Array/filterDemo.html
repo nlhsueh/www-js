@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p>Numbers: [45, 4, 9, 16, 25]</p>
+    <h3>Map: </h3>
+    <div id="pMap"></div>
+
+    <h3>Filter: </h3>
+    <div id="pFilter"></div>
+
+    <h3>Reduce: </h3>
+    <div id="pReduce"></div>
+
+    <script>
+        let numbers = [45, 4, 9, 16, 25];
+        document.getElementById("pMap").innerHTML = numbers.map(mul2);
+        document.getElementById("pFilter").innerHTML = numbers.filter(over18);
+        document.getElementById("pReduce").innerHTML = numbers.reduce(sum);
+
+        function mul2(value, index, array) {
+            return value * 2;
+        }
+        function over18(value, index, array) {
+            return value > 18;
+        }
+        function sum(total, value, index, array) {
+            return total + value;
+        }
+    </script>
+
+</body>
+
+</html>

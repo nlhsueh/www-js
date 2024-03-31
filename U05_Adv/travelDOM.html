@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript parentNode</title>
+</head>
+
+<body>
+    <div id="main">
+        <p class="note">This is a note!</p>
+    </div>
+
+    <ul id="menu">
+        <li>Home</li>
+        <li>Products</li>
+        <li class="current">Customer Support</li>
+        <li>Careers</li>
+        <li>Investors</li>
+        <li>News</li>
+        <li>About Us</li>
+    </ul>
+
+    <script>
+        // let note = document.querySelector('.note');
+        // console.log(note.parentNode);
+
+        let current = document.querySelector('.current');
+        let prevSibling = current.previousElementSibling;
+        while (prevSibling) {
+            console.log(prevSibling);
+            prevSibling = current.previousElementSibling;
+        }
+    </script>
+</body>
+
+</html>

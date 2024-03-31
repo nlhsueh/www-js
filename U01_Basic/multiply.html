@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script>
+        function multiply() {
+            let v1 = document.getElementById("first-num").value;
+            let v2 = document.getElementById("second-num").value;
+            let res = Number.parseInt(v1) * Number.parseInt(v2);
+            document.getElementById("result").innerHTML += res.toString();
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        The first number: <input type="text" id="first-num" /> <br>
+        The second number: <input type="text" id="second-num" /> <br>
+        <input type="button" onclick="multiply()" value="Multiply"> <br>
+    </form>
+    <p id="result"> The result is: </p>
+</body>
+
+</html>

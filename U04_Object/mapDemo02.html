@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        teachers = new Map();
+        teachers.set('t01', 'Albert');
+        teachers.set('t02', 'Nick');
+        t_name = teachers.get('t01');
+
+        const teacher = new Map();
+        teacher.set("t001", 'Nick');
+        teacher.set("t002", 'Jie');
+        teacher.set("t003", 'Jonathan');
+
+        if (teachers.has('t01')) {
+            window.alert('t01 repeat')
+        }
+        for ([key, value] of teacher.entries()) {
+
+        }
+
+    </script>
+
+    <p id="hi"></p>
+
+</body>
+MapDemp02, please open console to read.
+
+</html>

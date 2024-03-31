@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercise</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <script src="js/main.js"></script>
+    <script src="js/question.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div id="sider">
+            <h2 id="topic">JavaScript Exercise</h2>
+            <ul>
+                <li onclick="go(this)" title="Q1">Q.01</li>
+                <li onclick="go(this)" title="Q2">Q.02</li>
+                <li onclick="go(this)" title="Q3">Q.03</li>
+                <li onclick="go(this)" title="Q4">Q.04</li>
+                <li onclick="go(this)" title="Q5">Q.05</li>
+                <li onclick="go(this)" title="Q6">Q.06</li>
+                <li onclick="go(this)" title="Q7">Q.07</li>
+                <li onclick="go(this)" title="Q8">Q.08</li>
+                <li onclick="go(this)" title="Q9">Q.09</li>
+                <li onclick="go(this)" title="Q10">Q.10</li>
+                <li onclick="go(this)" title="Q11">Q.11</li>
+                <li onclick="go(this)" title="Q12">Q.12</li>
+                <li onclick="go(this)" title="Q13">Q.13</li>
+                <li onclick="go(this)" title="Q14">Q.14</li>
+                <li onclick="go(this)" title="Q15">Q.15</li>
+                <li onclick="go(this)" title="Q16">Q.16</li>
+                <li onclick="go(this)" title="Q17">Q.17</li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="Q0">
+                <h1 id="head">JavaScript Exercise</h1>
+                <p>(1) 17 題都有寫</p>
+                <p>(2) 為求方便，以下輸出會出現在輸出框內( console 也會有)</p>
+                <p>(3) 左側選單可快速跳到該題</p>
+            </div>
+            <hr>
+
+            <div id="Q1">
+                <h1>Q1. 乘法除法</h1>
+                <p>
+                    輸入兩個輸字，選擇乘法或除法的按鈕，輸出結果 (小數點下兩位）。
+                </p>
+                <input type="text" id="Q1-n1" placeholder="n1">
+                <input type="text" id="Q1-n2" placeholder="n2">
+                <input type="button" value="乘法" onclick="Q1(1)">
+                <input type="button" value="除法" onclick="Q1(0)">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q1-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>
+                        單純乘除法
+                    </p>
+                </div>
+            </div>
+            <hr>
+
+            <div id="Q2">
+                <h1>Q2. 三角形面積</h1>
+                <p>
+                    輸入三個邊長，判斷是否 (1) 符合三角形規範 (2) 正三角形 (3) 等腰三角形。
+                </p>
+                <input type="text" id="Q2-a" placeholder="a">
+                <input type="text" id="Q2-b" placeholder="b">
+                <input type="text" id="Q2-c" placeholder="c">
+                <input type="button" value="判斷" onclick="Q2()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q2-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>先把邊長由小排到大，形成新的 a, b, c</p>
+                    <p>(1) 檢驗 a+b > c 是否成立 (兩邊和大於第三邊)</p>
+                    <p>(2) 檢驗 a == c 是否成立 (若 a==c，b 也會相同，因為已排序)</p>
+                    <p>(3) 檢驗 a==b 或 b==c 是否成立</p>
+                </div>
+            </div>
+            <hr>
+            
+            <div id="Q3">
+                <h1>Q3. 費柏納西</h1>
+                <p>
+                    輸入一個數字，求 Fibonacci 的值。
+                </p>
+                <input type="text" id="Q3-n" placeholder="n">
+                <input type="button" value="Fibonacci" onclick="Q3()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q3-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>
+                        費氏數用遞迴太浪費效能，中間重複的太多，所以用迴圈
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q4">
+                <h1>Q4. 質數一</h1>
+                <p>
+                    輸入一個數字，回傳是否為質數。
+                </p>
+                <input type="text" id="Q4-n" placeholder="n">
+                <input type="button" value="檢查" onclick="Q4()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q4-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>
+                        檢驗 2 ~ 根號n 即可(對稱)
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q5">
+                <h1>Q5. 質數二</h1>
+                <p>
+                    輸入一個數字，列出所有不大於此數的質數。
+                </p>
+                <input type="text" id="Q5-n" placeholder="n">
+                <input type="button" value="列出" onclick="Q5()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q5-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>
+                        同上，多一層迴圈來依序列出 2 ~ n 做檢驗
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q6">
+                <h1>Q6. 身分證</h1>
+                <p>
+                    設計一個 HTML可以輸入身分證與 email。(1) 當按下 提交 時會檢查身分證是否正確 (2) 切換到 email 時就會檢查。
+                </p>
+                <input type="text" id="Q6-id" placeholder="id" onchange="Q6()">
+                <input type="text" id="Q6-email" placeholder="email">
+                <input type="button" value="提交" onclick="Q6()">
+                <p id="Q6-warn"></p>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>Regex 檢驗，開頭英文一碼、第二碼僅1或2、後面接8碼數字，所以檢驗規則寫成:</p>
+                    <p>/[a-zA-Z](1|2)[0-9]{8}/</p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q7">
+                <h1>Q7. 字串環</h1>
+                <p>
+                    寫一個程式，每按一下 button。
+                    IECS FCU => ECS FCUI => CS FCUIE => …
+                </p>
+                <input type="button" value="Shift" onclick="Q7()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q7-ans">IECS FCU</p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>
+                        用 .splice() 切割字串，把第一個丟到切割後的字串後方，形成新字串
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q8">
+                <h1>Q8. 去除標點</h1>
+                <p>s = "師太：「和尚、道長你們一起上吧，我趕時間。」"。</p>
+                <p>請透過 split 和正規表示式用標點符號斷字，形成一個陣列。</p>
+                <input type="button" value="Split" onclick="Q8()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q8-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>
+                        用 .split 和 Regex 把標點符號切斷，但有些標點符號連續，所以會多切出空字串，就特別將空字串轉成 NaN
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q9">
+                <h1>Q9. 星期幾</h1>
+                <p>
+                    2021/1/1 是星期五，輸入月份和日期，輸出是星期幾。請用一個陣列記錄每個月的天數，並應用之。
+                </p>
+                <input type="text" id="Q9-date" placeholder="YYYY/MM/DD">
+                <input type="button" value="計算" onclick="Q9()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q9-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>使用蔡勒公式，因為時間複雜度是 O(1)</p>
+                    <p>特別考慮 "格里曆" 和 "儒略曆" 的交替 (1582/10/4)</p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q10">
+                <h1>Q10. 猜數字</h1>
+                <p>
+                    系統產生一個 1-100 的隨意整數，使用者猜，提示太高或太低。猜出後提示共猜了幾次。
+                </p>
+                <input type="text" id="Q10-n"  placeholder="n">
+                <input type="hidden" id="Q10-num" value="-1">
+                <input type="hidden" id="Q10-counter" value="0">
+                <input type="button" value=" 猜 " onclick="Q10()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q10-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>
+                        每次點擊函式都會重新生成數字和計算，所以用 type = hidden 的 input 作為紀錄，點擊後從 hidden 提取 value
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q11">
+                <h1>Q11. 溫度</h1>
+                <p>
+                    一個陣列儲存一群溫度，請使用 short function (=>) 做一個攝氏轉華氏溫度的功能，輸出到另一個陣列，並印出。
+                </p>
+                <input type="text" id="Q11-t"  placeholder="t1, t2, t3...">
+                <input type="button" value="轉換" onclick="Q11()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q11-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>用 map 使輸入的所有攝氏溫度轉成華氏溫度</p>
+                    <p>先乘完同個優先度的所有乘法，再做除法會比較精準</p>   
+                </div>
+            </div>
+            <hr>
+            <div id="Q12">
+                <h1>Q12. 副檔名</h1>
+                <p>
+                    輸入一個檔名，輸出副檔名名稱。例如 memberList.txt ⇒ txt
+                </p>
+                <input type="text" id="Q12-f"  placeholder="檔名">
+                <input type="button" value="輸出" onclick="Q12()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q12-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>
+                        用 .split(".") 分隔後，再用 .slice(-1) 取得最後的部分即為副檔名
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q13">
+                <h1>Q13. 信箱</h1>
+                <p>
+                    輸入一個信箱，輸出是否為合格的信箱。nlhsueh@mail.fcu.edu.tw ⇒ 合格。nlhsueh.mail.fcu.edu.tw ⇒ 錯誤。
+                </p>
+                <input type="text" id="Q13-email" placeholder="email">
+                <input type="button" value="判斷" onclick="Q13()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q13-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>合法信箱的條件 :</p>
+                    <p>1. 英文開頭</p>
+                    <p>2. 有 @</p>
+                    <p>3. @ 後面為英數和點(.)的組合</p>
+                    <p>&emsp;&emsp;a. 點(.)至少出現一次</p>
+                    <p>&emsp;&emsp;b. @ 後方不能直接是點(.)</p>
+                    <p>&emsp;&emsp;c. 點(.)不會連續</p>
+                    <p>&emsp;&emsp;d. 點(.)的兩側必須有英或數</p>
+                    <p>4. 結尾必須是英文</p>
+                    <br>
+                    <p>所以正則篩選規則如下:</p>
+                    <p>/^[a-z].*\@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*\.[A-Za-z]+$/</p>  
+                </div>
+            </div>
+            <hr>
+            <div id="Q14">
+                <h1>Q14. 平方和</h1>
+                <p>
+                    一個陣列儲存一群數字，透過 forEach() 回傳此平方和。dis = [12, 13, 14] ⇒ (12**2 + 13**2 + 14**2)
+                </p>
+                <input type="text" id="Q14-ns"  placeholder="n1, n2 ,n3...">
+                <input type="button" value="平方和" onclick="Q14()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q14-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>
+                        forEach 遍歷平方後加總起來
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q15">
+                <h1>Q15. 過濾人口</h1>
+                <p>使用 array.filter 挑選出人口小於 300 萬的都市</p>
+                <p>
+                    let cities = [<br>
+                    &emsp;&emsp;&emsp;&emsp;{name: 'Los Angeles', population: 3792621},<br>
+                    &emsp;&emsp;&emsp;&emsp;{name: 'New York', population: 8175133},<br>
+                    &emsp;&emsp;&emsp;&emsp;{name: 'Chicago', population: 2695598},<br>
+                    &emsp;&emsp;&emsp;&emsp;{name: 'Houston', population: 2099451},<br>
+                    &emsp;&emsp;&emsp;&emsp;{name: 'Philadelphia', population: 1526006}<br>
+                    &emsp;&emsp;];<br>
+                </p>
+                <input type="button" value="挑選" onclick="Q15()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q15-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>
+                        用 filter 篩選後，再用 map 取出每個 object 裡 "name" 的值
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q16">
+                <h1>Q16. 排序人口</h1>
+                <p>
+                    同上，使用儘可能少的指令，印出人口小於 300 萬，由人口少到多排序印出 都市名與人口數。
+                </p>
+                <input type="button" value="印出" onclick="Q16()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q16-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>
+                        .sort() 裡面指定 object 的 "population" 做排序依據
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div id="Q17">
+                <h1>Q17. 成績</h1>
+                <p>
+                    有一個二維陣列 grade，儲存 三個人三科的成績（請隨機產生）; 一個一維陣列 names 儲存三個人的姓名; 一個一維陣列儲存三科的名稱。請算出 (1)  各科平均 (2) 每個人的平均 (3) 各科最高分予該學生姓名。
+                </p>
+                <input type="button" value="產生" onclick="Q17()">
+                <div class="answer">
+                    <h3>輸出 :</h3>
+                    <p id="Q17-des"></p>
+                    <table id="Q17-g"></table>
+                    <p id="Q17-ans"></p>
+                </div>
+                <div class="explanation">
+                    <h2>講解:</h2>
+                    <p>跑迴圈時，運用索引同時對各學生和各科目作加總，最後一起印出</p>
+                    <p>個人猜測，此題用 object 應會比 array 更易於操作</p>
+                </div>
+            </div>
+            <div class="empty"></div>
+        </div>
+    </div>
+</body>
+</html>

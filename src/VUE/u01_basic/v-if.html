@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first Vue page</title>
+    <style>
+        #app {
+            border: dashed black 1px;
+            width: 130px;
+            padding-left: 20px;
+            font-weight: bold;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Example with 'v-if' and 'v-else'</h1>
+
+    <p>Try changing the 'typewriterCount' value in the Vue instance to '0' and run the code again.</p>
+
+    <div id="app">
+        <p v-if="typewriterCount>0">
+            in stock
+        </p>
+        <p v-else>
+            not in stock
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    typewriterCount: 3
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first Vue page</title>
+    <style>
+        #app>div {
+            display: inline-block;
+            border: dashed black 1px;
+            padding: 10px;
+            background-color: lightgreen;
+        }
+
+        #app p {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Example: Get the array element index with 'v-for'</h1>
+    <p>The 'v-for' directive is used to get the index of objects inside the 'manyFoods' array, together with the name
+        and url of each food object.</p>
+
+    <div id="app">
+        <div>
+            <p v-for="(x, index) in manyFoods">
+                {{ index }}: "{{ x.name }}", url: "{{ x.url }}" <br>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    manyFoods: [
+                        { name: 'Burrito', url: 'img_burrito.svg' },
+                        { name: 'Salad', url: 'img_salad.svg' },
+                        { name: 'Cake', url: 'img_cake.svg' },
+                        { name: 'Soup', url: 'img_soup.svg' },
+                        { name: 'Fish', url: 'img_fish.svg' },
+                        { name: 'Pizza', url: 'img_pizza.svg' },
+                        { name: 'Rice', url: 'img_rice.svg' }
+                    ]
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+
+</body>
+
+</html>

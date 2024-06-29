@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>成績</title>
+    <style>
+        #app {
+            border: dashed black 1px;
+            width: 130px;
+            padding-left: 20px;
+            font-weight: bold;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Example with 'v-if' and 'v-else'</h1>
+
+    <p>列出不及格的分數 </p>
+
+    <div id="app">
+        <p v-if="grade>60">
+            你很棒，考了 {{ grade }} 分！
+        </p>
+        <p v-else>
+            要加油！
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    grade: 90
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+
+</body>
+
+</html>

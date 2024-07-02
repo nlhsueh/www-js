@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        label,
+        input {
+            display: block;
+            margin: 5px;
+        }
+
+        body {
+            width: 400px;
+            margin: auto
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+    <script>
+        let names = [], heights = [], weights = [];
+        let people = [];
+
+        function bmi() {
+            let h = document.getElementById("height").value;
+            let w = document.getElementById("weight").value;
+            let bmi = w / (h * h);
+            bmi = Math.round(bmi * 100, 2) / 100
+            document.getElementById("showBMI").innerHTML = bmi;
+        }
+
+        function quickInput() {
+            let input_string = document.getElementById("hei_wei").value;
+            let hw = input_string.split(" ");
+            let h = Number.parseFloat(hw[0]), w = Number.parseFloat(hw[1]);
+            let bmi = w / (h * h);
+            bmi = Math.round(bmi * 100, 2) / 100
+            document.getElementById("showBMI").innerHTML = bmi;
+        }
+
+        function add() {
+            let _name = document.getElementById("_name").value;
+            let h = document.getElementById("height").value;
+            let w = document.getElementById("weight").value;
+            names.push(_name);
+            heights.push(h);
+            weights.push(w);
+            aPerson = { name: _name, h: h, w: w };
+            people.push(aPerson);
+            show_all();
+        }
+
+        function show_all() {
+            let show_str = "";
+            let show_str2 = "";
+            for (i = 0; i < names.length; i++) {
+                show_str += `${names[i]}, ${heights[i]}cm, ${weights[i]}kg<br>`;
+            }
+
+            for (p of people) {
+                show_str2 += `${p.name}, ${p.h}cm, ${p.w}kg<br>`;
+            }
+            document.getElementById("all").innerHTML = show_str2;
+            test_button = document.getElementById("test_button");
+            console.log(test_button);
+
+            test_button = function () {
+                window.alert('hello');
+            }
+
+        }
+
+        function reset() {
+            names = [], heights = [], weights = []; people = [];
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>FCU Health Center</h1>
+    <form action="">
+        <button type="button" onclick="show_all()">Show all</button>
+        <button id='test_button' type="button">test</button>
+    </form>
+
+    <h3>BMI: </h3>
+    <p id="showBMI"></p>
+
+    <h3>All People Information:</h3>
+    <p id="all"></p>
+</body>
+
+</html>

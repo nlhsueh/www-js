@@ -1,3 +1,23 @@
+<!-- 
+v01 基本課表
+功能：
+* 輸入姓名，選擇學年度後，按下提交就可以設定 title
+* 呈現課表
+* 排版：整體風格要置中
+
+學習：
+* 了解 html/table/css 的運作
+* 了解 javascript 的運作，放置位置的差異
+* 了解 button type 的差異
+* 透過設定 onload() 來觀察 button click 的差異
+* 了解為什麼 border 設定的方式
+
+Next
+ * 點擊後才出現課表，同時輸入隱藏
+ * 老師和課程名稱用不同的 class 來呈現
+ -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +30,11 @@
     body {
         margin: auto;
         width: 800px;
+    }
+
+    table {
+        margin: 20px;
+        /* margin: 20px auto; */
     }
 
     h1,
@@ -27,10 +52,6 @@
     td {
         border: 1px solid black;
         border-collapse: collapse;
-    }
-
-    table {
-        width: "90%"
     }
 </style>
 
@@ -97,7 +118,6 @@
             semester = document.getElementById('semester').value;
             title = `${s_name}; ${semester}`;
             document.getElementById('title').innerHTML = title;
-            // window.alert(document.getElementById('title').innerHTML);
         }
     </script>
 

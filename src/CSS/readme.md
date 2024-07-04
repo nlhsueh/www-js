@@ -10,6 +10,7 @@
 學習：
 * 了解 html/table/css 的運作
 * 了解 javascript 的運作，放置位置的差異
+* 了解 輸入表單元件，如 text, select 元件應用
 * 了解 button type 的差異（submit/button）
 * 透過設定 onload() 來觀察 button click 的差異
 * 了解 border 設定的方式 (必須寬度、型態與顏色)
@@ -54,10 +55,19 @@
 ## v04 老師介紹
 
 功能
-* 每個都以類似卡片的方式呈現，包含老師的照片（請上系網抓），下方或旁邊有姓名，專長，連接等資訊。卡片有外框。 
-* 一行可以有 2-3 個老師。
+* 依據 [course_table_v04.html](course_table_v04.html) 進行修改：我們在課表下方呈現老師的資訊。
+* 每個都以類似卡片的方式呈現，包含老師的照片（請直接連擊系網 img src），下方或旁邊有姓名。卡片有外框。 
+* 一行有 3 個老師。
+* 每個圖片的寬度調整成等寬，但因為高度有些許不同，請採取上下對齊的預設方式（因此下方會不對齊）
+* 同一排名字應該是對齊的
 
-[畫面示意圖](https://docs.google.com/presentation/d/1Zp_S4Fr0kIRSqC43Zaurx7eCJD3Sy2lBe4PRsF1cNpQ/edit#slide=id.g2751abaa62a_0_24)
+[畫面示意圖](https://docs.google.com/presentation/d/1Zp_S4Fr0kIRSqC43Zaurx7eCJD3Sy2lBe4PRsF1cNpQ/edit#slide=id.g2ea2ad38908_0_0)
 
 學習
+* float 的應用
+* position 的應用：relative 及 absolute
+* 卡片的排列呈現設計
+
+延伸
+* 請多放一些老師的資訊，例如 email, 專長等
 

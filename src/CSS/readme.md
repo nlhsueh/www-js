@@ -71,5 +71,19 @@
 延伸
 * 多放一些老師的資訊，例如 email, 專長等
 
-## v05 
+## v05 flex 排版
 
+功能
+* 採用 flex 作為排版的容器，放入標題、課表、老師介紹與課程介紹
+* 老師的介紹卡長寬固定，當視窗寬度變動的時候，每一row能放的元素隨之變化。
+* 課程介紹之排版：採用column的方向配置，每個課程的最大寬度不會超過 800px;
+* 減少 class 的宣告，透過 flex 下的元件設定，來設定每一個項目的呈現
+* 應用 border-radius 來設定圖片的編框，使之有弧度。其中課程圖片的呈現變成圓形。
+
+學習
+* flex 的應用
+* border-radius 的應用
+* CSS combinator selector 的應用
+
+延伸
+* 改變 justify-content 及 align-items 來觀察變化

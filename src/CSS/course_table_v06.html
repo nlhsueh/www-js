@@ -7,11 +7,18 @@
     <title>My Course Table</title>
 </head>
 
+<!-- media query -->
+<style>
+    @media screen and (max-width: 600px) {
+        .flex-course img {
+            display: none;
+        }
+    }
+</style>
+
 <!-- flex container -->
 <style>
     .flex-container {
-        margin: auto;
-        max-width: 1200px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -109,11 +116,27 @@
         display: block;
     }
 </style>
+<style>
+    .banner {
+        margin: auto;
+        background-color: beige;
+        padding: 30px;
+        margin: 0px;
+        font-size: large;
+
+        & h1,
+        h3 {
+            text-align: center;
+        }
+
+    }
+</style>
 
 <body>
 
-    <div class="flex-container">
-        <h1>Course Table</h1>
+    <div class="banner">
+        <h1>逢甲大學學士後資訊工程專班</h1>
+        <h3>112-3 課表</h3>
     </div>
 
     <h2>我的課表</h2>

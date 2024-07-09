@@ -68,6 +68,8 @@
 * position 的應用：relative 及 absolute
 * 卡片的排列呈現設計
 
+[參考程式](course_table_v04r.html)
+
 延伸
 * 多放一些老師的資訊，例如 email, 專長等
 
@@ -86,6 +88,10 @@
 * border-radius 的應用
 * CSS combinator selector 的應用
 
+[畫面示意圖](https://docs.google.com/presentation/d/1Zp_S4Fr0kIRSqC43Zaurx7eCJD3Sy2lBe4PRsF1cNpQ/edit#slide=id.g2eabbffc021_0_0)
+
+[參考程式](course_table_v05.html)
+
 延伸
 * 改變 justify-content 及 align-items 來觀察變化
 
@@ -94,7 +100,15 @@
 功能
 * 當視窗小於 800px 時，課程介紹的圖片消失; 反之則呈現
   * 變化：圖片變小不消失
-* 設定一個 banner 的 class 放置標題，如 [圖示]()
+* 設定一個 banner 的 class 放置標題。
+
+學習
+* @media 的應用：響應式設計
+* 簡易橫幅製作
+ 
+[畫面示意圖](https://docs.google.com/presentation/d/1Zp_S4Fr0kIRSqC43Zaurx7eCJD3Sy2lBe4PRsF1cNpQ/edit#slide=id.g276ceb70b74_0_0)
+
+[參考程式](course_table_v06.html)
 
 ## v07 轉移
 

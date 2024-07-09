@@ -7,6 +7,10 @@
     <title>My Course Table</title>
 </head>
 
+<!-- overlay -->
+<style>
+</style>
+
 <!-- media query -->
 <style>
     @media screen and (max-width: 600px) {
@@ -53,10 +57,35 @@
         /* border: 1px solid red; */
     }
 
+    .teacher_card .t-intro {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 205px;
+        color: black;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        text-align: left;
+        padding: 5px;
+    }
+
     .teacher_card img {
         width: 100%;
         border-radius: 8px;
         height: 205px;
+        transition: 0.5s ease;
+    }
+
+    .teacher_card:hover {
+        & img {
+            opacity: 0.2;
+        }
+
+        & .t-intro {
+            opacity: 1;
+            overflow: scroll;
+        }
     }
 </style>
 
@@ -117,10 +146,25 @@
     }
 </style>
 
-<body>
+<style>
+    .banner {
+        margin: auto;
+        background-color: beige;
+        padding: 30px;
+        margin: 0px;
+        font-size: large;
 
-    <div class="flex-container">
-        <h1>Course Table</h1>
+        & h1,
+        h3 {
+            text-align: center;
+        }
+    }
+</style>
+
+<body>
+    <div class="banner">
+        <h1>逢甲大學學士後資訊工程專班</h1>
+        <h3>112-3 課表</h3>
     </div>
 
     <h2>我的課表</h2>
@@ -160,40 +204,80 @@
         <div class="teacher_card">
             <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/IMG_2906.png" alt="">
             <p>薛念林老師</p>
+            <div class="t-intro">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quia omnis fugit veritatis nulla,
+                veniam, voluptate maiores eveniet porro maxime non harum similique atque! Consequatur explicabo
+                praesentium laborum possimus, consequuntur totam molestiae illum. Facilis odio quo error commodi
+                repellat? </div>
         </div>
 
         <div class="teacher_card">
             <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/IeonLee800X800.png" alt="">
             <p>李俊宏老師</p>
+            <div class="t-intro">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ducimus, molestiae incidunt provident
+                rem veniam suscipit labore fuga a accusamus laudantium accusantium eos harum deserunt vero odio eaque
+                voluptate amet officiis magnam? Ut, maiores vel nisi nihil totam voluptatum saepe. </div>
         </div>
 
         <div class="teacher_card">
             <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/pic_02423.jpg" alt="">
             <p>陳錫民老師</p>
+            <div class="t-intro">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ipsa dolorem veniam incidunt
+                dignissimos voluptas aut officiis cupiditate modi vel temporibus non, laudantium est nobis numquam
+                tempore consectetur, odit autem. Esse, voluptatibus asperiores. Fugiat est praesentium perferendis
+                quisquam voluptas hic!
+            </div>
         </div>
 
         <div class="teacher_card">
             <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/CCC2_square.jpg" alt="">
             <p>張真誠老師</p>
+            <div class="t-intro">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum laudantium possimus vero veritatis
+                quibusdam repellat porro eius! Dignissimos praesentium ut voluptatem quisquam corporis cupiditate
+                molestias. Dignissimos corporis eius vitae ipsam, cum, saepe quae tenetur, fuga laboriosam rem
+                perferendis ad illo!
+            </div>
         </div>
 
         <div class="teacher_card">
             <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/%E7%89%B9%E7%B4%84%E8%AC%9B%E5%BA%A7-%E6%A1%91%E6%85%A7%E6%95%8F-%E6%AD%A3%E6%96%B9%E5%BD%A2.jpg"
                 alt="">
             <p>桑慧敏老師</p>
+            <div class="t-intro">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic cum illo tempora ab facere qui ex accusamus
+                repellendus, beatae pariatur iure voluptatibus fugiat molestiae unde excepturi sunt, suscipit quod
+                reprehenderit necessitatibus aliquam nobis optio, ratione reiciendis? Dolorem neque repellat sed?
+            </div>
         </div>
 
         <div class="teacher_card">
             <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/wblee5c-800.jpg" alt="">
             <p>李維斌老師</p>
+            <div class="t-intro">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quam necessitatibus dolorem adipisci
+                autem eius doloribus repudiandae nulla incidunt officiis illo quod fuga soluta obcaecati facere
+                veritatis molestias aliquid, sequi vel saepe consequatur dicta? Tempore fugiat impedit dolor laborum
+                natus.
+            </div>
         </div>
         <div class="teacher_card">
             <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/T29_FCLin.png" alt="">
             <p>林峰正老師</p>
+            <div class="t-intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sit ipsam molestiae
+                laudantium aut ex fugiat, assumenda qui, amet possimus perspiciatis illum deleniti id tempora quae modi
+                ea quasi architecto atque cupiditate. Eum placeat molestias quasi fuga ad fugit tenetur!</div>
         </div>
+
         <div class="teacher_card">
             <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/pic_02726.jpg" alt="">
             <p>劉明機老師</p>
+            <div class="t-intro">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aspernatur recusandae
+                molestias molestiae minus error sed quas ratione labore maxime, aut sapiente tempora? Laudantium odio
+                harum illo deserunt amet quae ipsam ea eaque, qui deleniti recusandae sunt corporis tenetur ducimus.
+            </div>
         </div>
     </div>
 

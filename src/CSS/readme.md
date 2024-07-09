@@ -113,9 +113,15 @@
 ## v07 轉移
 
 功能
-* 當游標移到老師的圖片時，圖片變暗，同區域出現老師的介紹（用 loren 產生字），若字太多，可以捲軸來閱讀。
+* 當游標移到老師的圖片時，圖片變透明，同區域出現老師的介紹（用 loren 產生字），若字太多，可以捲軸來閱讀。
 * 同上，當游標移出該區域時，恢復原狀
 
 學習
 * image opacity
 * transition
+
+## v08 排版
+
+* 參考 [這個畫面](https://docs.google.com/presentation/d/1Zp_S4Fr0kIRSqC43Zaurx7eCJD3Sy2lBe4PRsF1cNpQ/edit#slide=id.g2eb0d8fe67c_0_8)，設計新版的我的課表
+* 須符合響應設計，當畫面過小時，navi, left, main, right 要做出變化
+* 請自行發揮，發揮特色

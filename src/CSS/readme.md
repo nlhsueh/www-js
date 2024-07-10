@@ -122,6 +122,6 @@
 
 ## v08 排版
 
-* 參考 [這個畫面](https://docs.google.com/presentation/d/1Zp_S4Fr0kIRSqC43Zaurx7eCJD3Sy2lBe4PRsF1cNpQ/edit#slide=id.g2eb0d8fe67c_0_8)，設計新版的我的課表
+* 參考 [這個畫面](https://docs.google.com/presentation/d/1Zp_S4Fr0kIRSqC43Zaurx7eCJD3Sy2lBe4PRsF1cNpQ/edit#slide=id.g2eb0d8fe67c_0_8)以及[這個面板](https://www.w3schools.com/css/css_website_layout.asp)，設計新版的「我的課表」，
 * 須符合響應設計，當畫面過小時，navi, left, main, right 要做出變化
 * 請自行發揮，發揮特色

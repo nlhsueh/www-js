@@ -2,11 +2,21 @@
 Bootstrap
 ===
 
+## bs01 Using bootstrap
 
+功能
+* 將前一版的 course table 的所有 css 刪除，改用 bootstrap 來設計一個以手機介面為主的介面
+* 手機介面 1row 介紹一個老師，一但大於 sm 的大小則呈現 3 個老師
+* 使用 table, card, accordion 分別呈現課表，老師與課程介紹
 
-## Example
+學習
+* container, container-fluid 等排版
+* bootstrap-grid 的使用
+* 使用 https://via.placeholder.com/200x220 來作為圖面設計的草稿
 
-* [startbootstrap]()
+  
+## bs02 Tab
+
 
 
 ## Reference

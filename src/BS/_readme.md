@@ -16,6 +16,9 @@ Bootstrap
 * bootstrap-grid 的使用
 * 使用 https://via.placeholder.com/200x220 來作為圖面設計的草稿
 
+參考
+* [bs01](course_table_bs01.html)
+  * 延伸：老師資訊在呈現時，多加上 md, lg 等斷點，讓大尺寸的面板可以單行可以容納更多的項目。
   
 ## bs02 Tab
 
@@ -47,3 +50,9 @@ Bootstrap
 * [W3Schools Tutorials](https://www.w3schools.com/bootstrap5/index.php)
 * [Bootstrap 5](https://getbootstrap.com/)
 
+## bs04 More
+
+功能
+* 使用 Modal: 當點下老師的 profile 時，用 Modal 呈現老師的資訊。
+* 使用 navbar: 在輪盤下方加上 navbar, 放上連結到 iecs, fcu, taichung 的連接。
+* google bootstrap footer, 參考更多的 footer 樣式，豐富此網頁的設計。

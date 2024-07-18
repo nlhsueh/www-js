@@ -1,3 +1,5 @@
+
+// 0 1 1 2 3 5 8 13
 function fibonacci(x) {
     if (x == 0) { return 0; }
     if (x == 1) { return 1; }

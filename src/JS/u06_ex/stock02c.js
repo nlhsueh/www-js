@@ -55,6 +55,7 @@ transactions.forEach(t => {
 });
 
 console.log('My transaction list: ', trans_list);
+
 cost = computeCost(trans_list);
 console.log('My Cost: ', cost.toLocaleString());
 
@@ -64,7 +65,11 @@ current_price = {
     '鴻海': 200
 }
 
-marketValue = computeMarketValue(computeAsset(trans_list), current_price);
+assets = computeAsset(trans_list);
+console.log('資產物件 assets：')
+console.log(assets);
+
+marketValue = computeMarketValue(assets, current_price);
 console.log('Market value: ', marketValue.toLocaleString());
 
 module.exports = { current_price, parseObj };

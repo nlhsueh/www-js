@@ -1,6 +1,4 @@
 
-
-
 function showProfit(str_trade, current_price) {
     let tradeList = str_trade.split(" # ");
     let cost = 0, totQuantity = 0;
@@ -18,10 +16,16 @@ function showProfit(str_trade, current_price) {
     let profit = currentValue - cost;
     let profitRate = (profit / cost - 1) * 100;
 
-    console.log(`The cost is: ${cost.toLocaleString()}; the profit is ${profit.toLocaleString()}; the profit rate is ${profitRate.toFixed(2)}%`);
-}
-// price count,price count,price count ...
-buy_tsmc = "$200 2000 # $250 2000 # $300 2000";
-current_tsmc = 1035;
+    console.log(`\n成本: ${cost.toLocaleString()}`);
 
-showProfit(buy_tsmc, current_tsmc);
+    console.log(`現價：${current_price}`);
+
+    console.log(`獲利： ${profit.toLocaleString()}`);
+
+    console.log(`獲利率： ${profitRate.toFixed(2)}%`);
+}
+
+buy_tsmc = "$200 2000 # $250 2000 # $300 2000";
+current_price = 1035;
+
+showProfit(buy_tsmc, current_price);

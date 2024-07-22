@@ -14,4 +14,5 @@ for (trade of tradeList) {
     console.log(`買了 ${quantity} 股，價格 ${price}`)
 }
 
-console.log(priceSet, quantitySet)
+console.log('價格：', priceSet);
+console.log('數量：', quantitySet);

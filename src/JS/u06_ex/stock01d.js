@@ -18,10 +18,12 @@ function showProfit(str_trade, current_price) {
     let profit = currentValue - cost;
     let profitRate = (profit / cost - 1) * 100;
 
-    console.log(`The cost is: ${cost.toLocaleString()}; the profit is ${profit.toLocaleString()}; the profit rate is ${profitRate.toFixed(2)}%`);
-
+    console.log(`\n成本: ${cost.toLocaleString()}`);
+    console.log(`現價：${current_price}`);
+    console.log(`獲利： ${profit.toLocaleString()}`);
+    console.log(`獲利率： ${profitRate.toFixed(2)}%`);
 }
 
-const buy_tsmc = "$200 2000 # $250 2000 # $300 -2000";
+const buy_tsmc = "$200 2000 # $250 2000 # $300 2000";
 const currentPrice = 1000;
 showProfit(buy_tsmc, currentPrice)

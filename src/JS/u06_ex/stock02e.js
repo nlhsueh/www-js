@@ -57,16 +57,6 @@ function genStockInfo(transList) {
     // console.log(stocks);
 }
 
-// 依據現值，結算目前股票的合計現值
-// function computeMarketValue(asset, current_price) {
-//     let value = 0
-//     for (s in asset) {
-//         quantity = asset[s];
-//         value += quantity * current_price[s];
-//     }
-//     return value;
-// }
-
 s = [
     "1999/4/20 $200 買 台積電 1000股",
     "2001/9/10 $90 買 鴻海 2000股",
@@ -90,7 +80,7 @@ s.forEach(element => {
 
 genStockInfo(translationList);
 
-console.log(stocks);
+// console.log(stocks);
 
 for (s in stocks) {
     console.log('=====', s);

@@ -1,4 +1,5 @@
 
+// 有賣股票，可以算獲利
 
 function showProfit(str_trade, current_price) {
     // remove $

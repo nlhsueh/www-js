@@ -1,5 +1,5 @@
 
-## Stock exercise
+## Stock 01 Exercise
 
 ### stock01a buy stock
 
@@ -49,7 +49,7 @@ current_tsmc = 1035;
 * 使用 `map()` 來將陣列中每一個字串轉為整數 (`parseInt`)
 
 
-### stock2 sell stocks
+### stock01e sell stocks
 
 交易的數量可以是負的，表示賣出
 
@@ -65,6 +65,53 @@ const buy_tsmc = "$200 2000 # $250 2000 # $300 -2000";
 預估獲利: 1,550,000
 預估獲利率: 172.22%
 ```
+
+## Stock 02 Exercise
+
+### stock02a
+
+用物件型態表示一比交易記錄如下：
+```
+b3 = {
+    'name': '台灣大',
+    'buy_date': '2003/6/19',
+    'price': 80,
+    'quantity': 4000,
+    'trade': '買',
+}
+```
+
+請印出白話印出此交易，如 
+
+> 1999/4/20日 以 200元 買 台積電 股票 1000 股
+
+### stock 02b - 成本
+
+同上，請計算出所有的購買成本
+
+### stock 02c - 現值
+
+同上，可能同一支股票會買兩次，請依據所有的交易計算出現有的股票數量。用物件的方式來儲存，如：
+
+> My Asset:  { '台積電': 1200, '鴻海': 2000, '台灣大': 4000 }
+
+再用物件假設每一個股票的現值，然後計算出所有資產的現值。
+
+### stock 02d - class and object
+
+Learn
+* 如何用 object 來封裝更複雜的資訊
+  * 股票的買賣歷程
+  * 現有股票資產數量及其購買價格（方便計算獲利）
+  * 現有股票數量（方便計算現有市場價值）
+* 如何宣告 class, 如何透過 class 來生成 object
+  * 比較 object/class 的差異
+
+### stock 02e - 
+
+Learn
+* 
+
 
 ## BMI exercise
 

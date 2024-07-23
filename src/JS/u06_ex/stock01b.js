@@ -2,7 +2,7 @@
 buy_tsmc = "$200 2000 # $250 2000 # $300 2000";
 
 priceSet = [];
-quantitySet = []
+quantitySet = [];
 tradeList = buy_tsmc.split(' # ');
 for (trade of tradeList) {
     let price = trade.split(' ')[0].slice(1);
@@ -11,7 +11,7 @@ for (trade of tradeList) {
 
     priceSet.push(price);
     quantitySet.push(quantity);
-    console.log(`買了 ${quantity} 股，價格 ${price}`)
+    console.log(`買了 ${quantity} 股，價格 ${price}`);
 }
 
 console.log('價格：', priceSet);

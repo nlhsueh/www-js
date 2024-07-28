@@ -14,10 +14,10 @@ let names = ['Mary', 'John', 'Allen', 'Nick'];      // 學生姓名
 let subjects = "Math English Physical".split(" ");  // 科目名稱
 
 // 找出各科最高的分數，是誰的分數
-function hightest() {
-    let st_len = students.length;
-    let sj_len = students[0].length;
-    for (let j = 0; j < sj_len; j++) { //for each subject
+function show_hightest() {
+    let st_len = students.length;       // 學生數量
+    let sj_len = students[0].length;    // 科目數量
+    for (let j = 0; j < sj_len; j++) {  //for each subject
         console.log("Highest score of " + subjects[j]);
         let max_index = 0;
         let max = students[max_index][j];
@@ -44,5 +44,5 @@ function average(students) {
     return st_av;
 }
 
-hightest();
+show_hightest();
 console.log(names, '相對平均分數：', average(students));    // 四個學生的各科成績平均

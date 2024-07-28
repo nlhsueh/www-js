@@ -17,7 +17,11 @@ class People {
         console.log(s);
     }
 }
+
+console.log('=== Using object directly ===');
 person.sayHello();
+
+console.log('=== Creating objects from classes ===');
 nick = new People('nick', 30);
 nick.sayHello();
 

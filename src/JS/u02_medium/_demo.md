@@ -1,4 +1,32 @@
-### 練習
+## Demo
+
+### Array
+
+- [array_1D.js](array_1D.js): 
+- [array_2D.js](array_2D.js): 
+- [array_method.js](array_method.js): flat, slice 等 method
+- [array_sort.js](array_sort.js): 有預設的排序，也可以自訂。
+- [array_split.js](array_split.js): 字串切割後存到陣列; 和物件作比較。
+- [array_filter.js](array_filter.js): 
+- [array_for_of.js](array_for_of.js): 
+
+### Iteration
+- [iter.js](iter.js): for of, for in 的比較
+- [iter_filter.js](iter_filter.js): 透過定義 callback 函式來設計尋找條件
+- [iter_reduce.js](iter_reduce.js): 類遞迴
+
+### Object
+- [object.js](object.js): 物件屬性的設定與讀取
+- [object_array.js](object_array.js): 瀏覽物件的陣列
+- [object_class.js](object_class.js): 先宣告類別，在生成物件
+
+### Collection object
+- [js_Set.js](js_Set.js): 像數學的集合一樣，不會有重複的元素。
+- [js_Map.js](js_Map.js): 會有 key, value
+
+
+
+## Exercise
 
 ### ex01 解析字串1
 

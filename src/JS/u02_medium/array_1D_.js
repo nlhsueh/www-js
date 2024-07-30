@@ -1,6 +1,6 @@
 
 function sumGrade(g) {
-    sum += g;
+    //?
 }
 
 let grade = [20, 43, 56, 95, 77, 100, 34];

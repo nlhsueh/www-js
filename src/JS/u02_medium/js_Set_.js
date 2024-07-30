@@ -1,10 +1,11 @@
+
 s = new Set([12, 13, 34, 45]);
 v = s.values();
 console.log(v);
 
 console.log('=== No duplicates in set ===');
-s.add(100);
-s.add(12);
+s.? (100);
+s.? (12);
 console.log(s);
 
 console.log('=== For each ===');

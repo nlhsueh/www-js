@@ -10,6 +10,6 @@ console.log(students);
 console.log('=== For of and for in ===');
 for (let st of students) {
     for (let attr in st) {
-        console.log(attr, ":", st[attr]);
+        console.log(attr, ":", ?);
     }
 }

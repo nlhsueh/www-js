@@ -31,7 +31,7 @@ function showProfit(str_trade, current_price) {
     const profit = soldRevenue - costOfSoldShares; // 淨收益=收益-賣出的成本
     // 預估淨收益=預估現值-(總成本-賣出的成本)
     const estimatedProfit = estimatedValue - (totalCost - costOfSoldShares);
-    const estimatedProfitRate = (estimatedProfit / totalCost) * 100;
+    const estimatedProfitRate = (estimatedProfit / (totalCost - costOfSoldShares)) * 100;
 
     console.log(`總成本: ${totalCost.toLocaleString()}`);
     console.log(`預估現值: ${estimatedValue.toLocaleString()}`);

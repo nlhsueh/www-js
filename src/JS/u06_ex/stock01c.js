@@ -14,7 +14,7 @@ function showProfit(str_trade, current_price) {
 
     let currentValue = totQuantity * current_price;
     let profit = currentValue - cost;
-    let profitRate = (profit / cost - 1) * 100;
+    let profitRate = (profit / cost) * 100;
 
     console.log(`\n成本: ${cost.toLocaleString()}`);
 

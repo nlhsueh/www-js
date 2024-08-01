@@ -43,33 +43,3 @@ medals = [
     "Moldova 0 0 2",
     "Azerbaijan 1 0 0",
 ]
-
-country_list = [];
-medals.forEach(element => {
-    s = element.split(" ");
-    country = {};
-    country.name = s[0];
-    [country.gold, country.silver, country.bronze] = [s[1], s[2], s[3]].map(n => parseInt(n));
-    country_list.push(country);
-});
-
-// console.log(country_list);
-
-country_list.forEach(element => {
-    img_src = element.name.replaceAll('-', '_');
-    element.img = img_url[img_src];
-});
-
-console.log(country_list);
-
-console.log('=== 依據國家名排序 ===');
-country_list.sort((x, y) => x.name.localeCompare(y.name));
-console.log(country_list);
-
-console.log('=== 依據金牌數排序 ===');
-country_list.sort((x, y) => y.gold - x.gold);
-console.log(country_list);
-
-console.log('=== 依據總獎牌數排序 ===');
-country_list.sort((x, y) => (y.gold + y.silver + y.xx) - (x.gold + x.silver + x.bronze));
-console.log(country_list);

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Card Example</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .grade {
+            padding: 10px;
+            border-radius: 5px;
+            margin-right: 5px;
+            color: white;
+        }
+
+        .grade-math {
+            background-color: #ff6347;
+        }
+
+        .grade-science {
+            background-color: #4682b4;
+        }
+
+        .grade-history {
+            background-color: #3cb371;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <button id="sort-button" class="btn btn-primary mb-4">依數學成績排序</button>
+        <div class="row" id="students-container">
+            <!-- 學生卡片會在這裡生成 -->
+        </div>
+    </div>
+
+    <script>
+        const studentsData = [
+            {
+                name: "學生一",
+                photo: "https://via.placeholder.com/150",
+                grades: [
+                    { subject: "數學", score: 90, class: "grade-math" },
+                    { subject: "科學", score: 85, class: "grade-science" },
+                    { subject: "歷史", score: 88, class: "grade-history" }
+                ]
+            },
+            {
+                name: "學生二",
+                photo: "https://via.placeholder.com/150",
+                grades: [
+                    { subject: "數學", score: 75, class: "grade-math" },
+                    { subject: "科學", score: 95, class: "grade-science" },
+                    { subject: "歷史", score: 80, class: "grade-history" }
+                ]
+            },
+            {
+                name: "學生三",
+                photo: "https://via.placeholder.com/150",
+                grades: [
+                    { subject: "數學", score: 100, class: "grade-math" },
+                    { subject: "科學", score: 95, class: "grade-science" },
+                    { subject: "歷史", score: 80, class: "grade-history" }
+                ]
+            },
+        ];
+
+        const studentsContainer = document.getElementById("students-container");
+
+        function renderCards(students) {
+            studentsContainer.innerHTML = '';
+            students.forEach(student => {
+                let gradesHtml = '';
+                student.grades.forEach(grade => {
+                    gradesHtml += `<div class="grade ${grade.class}">${grade.subject}: ${grade.score}</div>`;
+                });
+
+                const cardHtml = `
+                    <div class="card col-md-4 mb-4" style="width: 18rem;">
+                        <img src="${student.photo}" class="card-img-top" alt="Student Photo">
+                        <div class="card-body">
+                            <h5 class="card-title">${student.name}</h5>
+                            <div class="d-flex justify-content-between">
+                                ${gradesHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                studentsContainer.innerHTML += cardHtml;
+            });
+        }
+
+        document.getElementById("sort-button").addEventListener("click", () => {
+            const sortedStudents = studentsData.slice().sort((a, b) => {
+                const mathGradeA = a.grades.find(grade => grade.subject === "數學").score;
+                const mathGradeB = b.grades.find(grade => grade.subject === "數學").score;
+                return mathGradeB - mathGradeA;
+            });
+            renderCards(sortedStudents);
+        });
+
+        // 初始顯示卡片
+        renderCards(studentsData);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -49,7 +49,7 @@ medals.forEach(element => {
     s = element.split(" ");
     country = {};
     country.name = s[0];
-    [country.gold, country.silver, country.x] = [s[1], s[2], s[3]].map(n => parseInt(n));
+    [country.gold, country.silver, country.bronze] = [s[1], s[2], s[3]].map(n => parseInt(n));
     country_list.push(country);
 });
 
@@ -71,5 +71,5 @@ country_list.sort((x, y) => y.gold - x.gold);
 console.log(country_list);
 
 console.log('=== 依據總獎牌數排序 ===');
-country_list.sort((x, y) => (y.gold + y.silver + y.xx) - (x.gold + x.silver + x.xx));
+country_list.sort((x, y) => (y.gold + y.silver + y.xx) - (x.gold + x.silver + x.bronze));
 console.log(country_list);

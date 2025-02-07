@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Course Table</title>
+</head>
+
+<!-- media query -->
+<style>
+    @media screen and (max-width: 600px) {
+        .flex-course img {
+            display: none;
+        }
+    }
+</style>
+
+<!-- flex container -->
+<style>
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .flex-course {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+
+<!-- style for Teacher Card -->
+<style>
+    .flex-container>.teacher_card {
+        width: 200px;
+        height: 240px;
+        padding: 5px;
+        position: relative;
+
+        & p {
+            text-align: center;
+            color: blue;
+            position: absolute;
+            bottom: 0px;
+            width: 95%;
+            padding: 0px;
+            margin: 5px 0px;
+            /* border: 1px solid red; */
+        }
+
+        /* border: 1px solid red; */
+    }
+
+    .teacher_card img {
+        width: 100%;
+        border-radius: 8px;
+        height: 205px;
+    }
+</style>
+
+<!-- style for course info -->
+<style>
+    .flex-course>div {
+        border: 1px dashed black;
+        max-width: 800px;
+        margin: 10px;
+    }
+
+    .flex-course p {
+        padding: 10px;
+        color: brown;
+    }
+
+    .flex-course h2 {
+        color: blue;
+    }
+
+    .flex-course img {
+        padding: 5px;
+        float: right;
+        border-radius: 50%;
+    }
+</style>
+
+<!-- style for course table -->
+<style>
+    h1,
+    h2,
+    form,
+    table {
+        text-align: center;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 3px;
+    }
+
+    td .teacher {
+        display: block;
+        color: blue;
+        font-size: smaller;
+    }
+
+    .teacher::after {
+        content: ' 老師';
+    }
+
+    .course_name,
+    .course {
+        display: block;
+    }
+</style>
+<style>
+    .banner {
+        margin: auto;
+        background-color: beige;
+        padding: 30px;
+        margin: 0px;
+        font-size: large;
+
+        & h1,
+        h3 {
+            text-align: center;
+        }
+
+    }
+</style>
+
+<body>
+
+    <div class="banner">
+        <h1>逢甲大學學士後資訊工程專班</h1>
+        <h3>112-3 課表</h3>
+    </div>
+
+    <h2>我的課表</h2>
+
+    <div class="flex-container">
+        <table class="course_table">
+            <tr>
+                <th>-</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+            </tr>
+            <tr>
+                <th>9:10-12:00</th>
+                <td><span> App 開發 </span>
+                    <span class="teacher">賴璉錡</span>
+                </td>
+                <td>資料結構與演算法 <span class="teacher">李俊宏</span></td>
+                <td>App 開發 <span class="teacher">賴璉錡</span></td>
+                <td>資料庫與後端 <span class="teacher">陳錫民</span></td>
+            </tr>
+            <tr>
+                <th>1:10-4:00</th>
+                <td>資料結構與演算法 <span class="teacher">李俊宏</span></td>
+                <td>進階網頁設計 <span class="teacher">薛念林</span></td>
+                <td>資料庫與後端 <span class="teacher">陳錫民</span></td>
+                <td>進階網頁設計 <span class="teacher">薛念林</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>老師介紹</h2>
+
+    <div class="flex-container">
+
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/IMG_2906.png" alt="">
+            <p>薛念林老師</p>
+        </div>
+
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/IeonLee800X800.png" alt="">
+            <p>李俊宏老師</p>
+        </div>
+
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/pic_02423.jpg" alt="">
+            <p>陳錫民老師</p>
+        </div>
+
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/CCC2_square.jpg" alt="">
+            <p>張真誠老師</p>
+        </div>
+
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/%E7%89%B9%E7%B4%84%E8%AC%9B%E5%BA%A7-%E6%A1%91%E6%85%A7%E6%95%8F-%E6%AD%A3%E6%96%B9%E5%BD%A2.jpg"
+                alt="">
+            <p>桑慧敏老師</p>
+        </div>
+
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/wblee5c-800.jpg" alt="">
+            <p>李維斌老師</p>
+        </div>
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/T29_FCLin.png" alt="">
+            <p>林峰正老師</p>
+        </div>
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/pic_02726.jpg" alt="">
+            <p>劉明機老師</p>
+        </div>
+    </div>
+
+    <div class="flex-course">
+
+        <div>
+            <div class='course_intro_div'>
+                <h2 class='course_title'>App 設計</h2>
+                <div class="course_img">
+                    <img src="https://picsum.photos/200?random=1" alt="">
+                </div>
+                <div class="course_desc">
+                    <p class=>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut non sed reiciendis natus
+                        accusantium
+                        voluptatum amet ipsam aliquid reprehenderit nulla! Omnis, libero. Harum repellendus voluptas
+                        est,
+                        eveniet autem amet at.</p>
+
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus
+                        obcaecati
+                        veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus
+                        praesentium
+                        deleniti molestias illo.</p>
+                </div>
+                <div class="course_grading">
+                    <ul>
+                        <li>平時：40%</li>
+                        <li>期中考：30%</li>
+                        <li>期末考：30%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2>資料結構與演算法</h2>
+            <img src="https://picsum.photos/200?random=2" alt="">
+            <div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut non sed reiciendis natus accusantium
+                    voluptatum amet ipsam aliquid reprehenderit nulla! Omnis, libero. Harum repellendus voluptas
+                    est,
+                    eveniet autem amet at.</p>
+
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus
+                    obcaecati
+                    veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus
+                    praesentium
+                    deleniti molestias illo.</p>
+            </div>
+            <ul>
+                <li>平時：40%</li>
+                <li>期中考：30%</li>
+                <li>期末考：30%</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>資料庫與後端</h2>
+            <img src="https://picsum.photos/200?random=3" alt="">
+            <div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut non sed reiciendis natus accusantium
+                    voluptatum amet ipsam aliquid reprehenderit nulla! Omnis, libero. Harum repellendus voluptas
+                    est,
+                    eveniet autem amet at.</p>
+
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus
+                    obcaecati
+                    veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus
+                    praesentium
+                    deleniti molestias illo.</p>
+            </div>
+            <ul>
+                <li>平時：40%</li>
+                <li>期中考：30%</li>
+                <li>期末考：30%</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>進階網頁設計</h2>
+            <img src="https://picsum.photos/200?random=4" alt="">
+            <div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut non sed reiciendis natus accusantium
+                    voluptatum amet ipsam aliquid reprehenderit nulla! Omnis, libero. Harum repellendus voluptas
+                    est,
+                    eveniet autem amet at.</p>
+
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus
+                    obcaecati
+                    veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus
+                    praesentium
+                    deleniti molestias illo.</p>
+            </div>
+            <ul>
+                <li>平時：40%</li>
+                <li>期中考：30%</li>
+                <li>期末考：30%</li>
+            </ul>
+        </div>
+
+
+</body>
+
+</html>

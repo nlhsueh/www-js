@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .image-container {
+        position: relative;
+        width: 300px;
+    }
+
+    .image-container img {
+        width: 100%;
+        display: block;
+        transition: opacity 0.5s ease;
+    }
+
+    .image-container .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: white;
+        display: flex;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .image-container:hover img {
+        opacity: 0.5;
+    }
+
+    .image-container:hover .overlay {
+        opacity: 1;
+        overflow: scroll;
+    }
+</style>
+
+<body>
+    <div class="image-container">
+        <img src="https://picsum.photos/id/598/600/400" alt="">
+        <div class="overlay">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

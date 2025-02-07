@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Course Table</title>
+</head>
+
+<!-- style for Teacher Card -->
+<style>
+    .teacher_card_panel::after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    .teacher_card {
+        float: left;
+        width: 40%;
+        padding: 5px;
+
+        & p {
+            color: blue;
+        }
+    }
+</style>
+
+<!-- style for course info -->
+<style>
+    .course_intro_div {
+        display: block;
+    }
+
+    .course_intro_div p,
+    .course_intro_div li {
+        color: brown;
+    }
+
+    .course_intro_div img {
+        float: right;
+    }
+</style>
+
+<!-- style for course table -->
+<style>
+    body {
+        margin: auto;
+        width: 800px;
+    }
+
+    table {
+        margin: 20px;
+    }
+
+    h1,
+    h2,
+    form,
+    table {
+        text-align: center;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 3px;
+    }
+
+    .course_table {
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+
+    td .teacher {
+        display: block;
+        color: blue;
+        font-size: smaller;
+    }
+
+    .teacher::after {
+        content: ' 老師';
+    }
+
+    .course_name {
+        display: block;
+    }
+
+    .course {
+        display: block;
+    }
+</style>
+
+<body>
+
+    <h1>Course Table</h1>
+
+    <div id="course_table" class="course_table">
+        <h2 id="title">我的課表</h2>
+
+        <table>
+            <tr>
+                <th>-</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+            </tr>
+            <tr>
+                <th>9:10-12:00</th>
+                <td><span onclick="course_intro('App')"> App 開發 </span>
+                    <span class="teacher">賴璉錡</span>
+                </td>
+                <td>資料結構與演算法; <span class="teacher">李俊宏</span></td>
+                <td>App 開發; <span class="teacher">賴璉錡</span></td>
+                <td>資料庫與後端; <span class="teacher">陳錫民</span></td>
+            </tr>
+            <tr>
+                <th>1:10-4:00</th>
+                <td>資料結構與演算法; <span class="teacher">李俊宏</span></td>
+                <td>進階網頁設計; <span class="teacher">薛念林</span></td>
+                <td>資料庫與後端; <span class="teacher">陳錫民</span></td>
+                <td>進階網頁設計; <span class="teacher">薛念林</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="teacher_card_panel">
+
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/IMG_2906.png" alt="">
+            <p>薛念林老師</p>
+        </div>
+
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/IeonLee800X800.png" alt="">
+            <p>李俊宏老師</p>
+        </div>
+
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/pic_02423.jpg" alt="">
+            <p>陳錫民老師</p>
+        </div>
+
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/CCC2_square.jpg" alt="">
+            <p>張真誠老師</p>
+        </div>
+
+        <div class="teacher_card">
+            <img src="https://www.iecs.fcu.edu.tw/media/img/teacher/avatar/%E7%89%B9%E7%B4%84%E8%AC%9B%E5%BA%A7-%E6%A1%91%E6%85%A7%E6%95%8F-%E6%AD%A3%E6%96%B9%E5%BD%A2.jpg"
+                alt="">
+            <p>桑慧敏老師</p>
+        </div>
+
+        <div class="teacher_card">
+            <img src="https://picsum.photos/300" alt="">
+            <p>賴璉錡老師</p>
+        </div>
+    </div>
+
+
+    <div class='course_intro_div'>
+        <h2 class='course_title'>App 設計</h2>
+        <div class="course_img">
+            <img src="https://picsum.photos/200?random=1" alt="">
+        </div>
+        <div class="course_desc">
+            <p class=>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut non sed reiciendis natus accusantium
+                voluptatum amet ipsam aliquid reprehenderit nulla! Omnis, libero. Harum repellendus voluptas est,
+                eveniet autem amet at.</p>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus obcaecati
+                veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus praesentium
+                deleniti molestias illo.</p>
+        </div>
+        <div class="course_grading">
+            <ul>
+                <li>平時：40%</li>
+                <li>期中考：30%</li>
+                <li>期末考：30%</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class='course_intro_div'>
+        <h2 class='course_title'>資料結構與演算法</h2>
+        <div class="course_img">
+            <img src="https://picsum.photos/200?random=2" alt="">
+        </div>
+        <div class="course_desc">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut non sed reiciendis natus accusantium
+                voluptatum amet ipsam aliquid reprehenderit nulla! Omnis, libero. Harum repellendus voluptas est,
+                eveniet autem amet at.</p>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus obcaecati
+                veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus praesentium
+                deleniti molestias illo.</p>
+        </div>
+        <div class="course_grading">
+            <ul>
+                <li>平時：40%</li>
+                <li>期中考：30%</li>
+                <li>期末考：30%</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class='course_intro_div'>
+        <h2 class='course_title'>資料庫與後端</h2>
+        <div class="course_img">
+            <img src="https://picsum.photos/200?random=3" alt="">
+        </div>
+        <div class="course_desc">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut non sed reiciendis natus accusantium
+                voluptatum amet ipsam aliquid reprehenderit nulla! Omnis, libero. Harum repellendus voluptas est,
+                eveniet autem amet at.</p>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus obcaecati
+                veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus praesentium
+                deleniti molestias illo.</p>
+        </div>
+        <div class="course_grading">
+            <ul>
+                <li>平時：40%</li>
+                <li>期中考：30%</li>
+                <li>期末考：30%</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class='course_intro_div'>
+        <h2 class='course_title'>進階網頁設計</h2>
+        <div class="course_img">
+            <img src="https://picsum.photos/200?random=4" alt="">
+        </div>
+        <div class="course_desc">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut non sed reiciendis natus accusantium
+                voluptatum amet ipsam aliquid reprehenderit nulla! Omnis, libero. Harum repellendus voluptas est,
+                eveniet autem amet at.</p>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus obcaecati
+                veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus praesentium
+                deleniti molestias illo.</p>
+        </div>
+        <div class="course_grading">
+            <ul>
+                <li>平時：40%</li>
+                <li>期中考：30%</li>
+                <li>期末考：30%</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+        // add onload() to check when the page will be reload 
+        function show() {
+            window.alert("Page on load");
+        }
+
+        function toggle_course_table() {
+            s_name = document.getElementById('s_name').value;
+            title = `${s_name}`;
+            semester = document.getElementById('semester').value;
+            title = `${s_name}; ${semester}`;
+            document.getElementById('title').innerHTML = title;
+
+            let course_table = document.getElementById('course_table');
+
+            // 當 style 設定在 internal/external, 判斷需用 '', 而不是 none
+            if (course_table.style.display == '' || course_table.style.display == 'none') {
+                course_table.style.display = 'block';
+            }
+            else course_table.style.display = 'none';
+        }
+
+        function course_intro(c) {
+
+        }
+    </script>
+
+</body>
+
+</html>

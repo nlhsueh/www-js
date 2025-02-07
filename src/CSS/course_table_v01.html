@@ -1,0 +1,126 @@
+<!-- 
+v01 基本課表
+功能：
+* 輸入姓名，選擇學年度後，按下提交就可以設定 title
+* 呈現課表
+* 排版：整體風格要置中
+
+學習：
+* 了解 html/table/css 的運作
+* 了解 javascript 的運作，放置位置的差異
+* 了解 button type 的差異
+* 透過設定 onload() 來觀察 button click 的差異
+* 了解為什麼 border 設定的方式
+
+Next
+ * 點擊後才出現課表，同時輸入隱藏
+ * 老師和課程名稱用不同的 class 來呈現
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Course Table</title>
+</head>
+<style>
+    body {
+        margin: auto;
+        width: 800px;
+    }
+
+    table {
+        margin: 20px;
+        /* margin: 20px auto; */
+    }
+
+    h1,
+    h2,
+    form,
+    table {
+        text-align: center;
+        background-color: antiquewhite;
+        /* FIX bug; why red does not work? */
+        border-color: red;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<!-- <body onload="show()"> -->
+
+<body>
+
+    <h1>Course Table</h1>
+
+    <h2 id="title">Nick, 112-3</h2>
+    <form>
+        <label for="s_name">Name</label>
+        <input type="text" id="s_name" name="s_name" value="Nick">
+
+        <label for="semester">Semester</label>
+        <select name="semester" id="semester">
+            <option value="112-1">112-1</option>
+            <option value="112-2">112-2</option>
+            <option value="112-3">112-3</option>
+        </select>
+
+        <!-- FIX bug -->
+        <button type="submit" onclick="setTitle()">Submit</button>
+    </form>
+
+    <hr>
+
+    <div class="course_table">
+        <table>
+            <tr>
+                <th>-</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+            </tr>
+            <tr>
+                <td>9:10-12:00</td>
+                <td>App 開發; 賴璉錡</td>
+                <td>資料結構與演算法; 李俊宏</td>
+                <td>App 開發; 賴璉錡</td>
+                <td>資料庫與後端; 陳錫民</td>
+            </tr>
+            <tr>
+                <td>1:10-4:00</td>
+                <td>資料結構與演算法; 李俊宏</td>
+                <td>進階網頁設計; 薛念林</td>
+                <td>資料庫與後端; 陳錫民</td>
+                <td>進階網頁設計; 薛念林</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+
+        // add onload() to check when the page will be reload 
+        function show() {
+            window.alert("Page on load");
+        }
+
+        function setTitle() {
+            s_name = document.getElementById('s_name').value;
+            title = `${s_name}`;
+            semester = document.getElementById('semester').value;
+            title = `${s_name}; ${semester}`;
+            document.getElementById('title').innerHTML = title;
+        }
+    </script>
+
+</body>
+
+</html>

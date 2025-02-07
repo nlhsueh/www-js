@@ -1,0 +1,249 @@
+<!-- 
+v03 課程介紹
+
+功能：
+* 呈現課程介紹資訊
+
+學習：
+
+
+Next
+* 點擊課程，可以出現介紹課程的大綱段落，課程圖片
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Course Table</title>
+</head>
+<style>
+    .course_intro_div {
+        display: block;
+    }
+
+    .course_intro_div p,
+    .course_intro_div li {
+        color: brown;
+    }
+
+    .course_intro_div img {
+        float: right;
+    }
+</style>
+<style>
+    body {
+        margin: auto;
+        width: 800px;
+    }
+
+    table {
+        margin: 20px;
+    }
+
+    h1,
+    h2,
+    form,
+    table {
+        text-align: center;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 3px;
+    }
+
+    .course_table {
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+
+    td .teacher {
+        display: block;
+        color: blue;
+        font-size: smaller;
+    }
+
+    .teacher::after {
+        content: ' 老師';
+    }
+
+    .course_name {
+        display: block;
+    }
+
+    .course {
+        display: block;
+    }
+</style>
+
+<body>
+
+    <h1>Course Table</h1>
+
+    <div id="course_table" class="course_table">
+        <h2 id="title">我的課表</h2>
+
+        <table>
+            <tr>
+                <th>-</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+            </tr>
+            <tr>
+                <th>9:10-12:00</th>
+                <td><span onclick="course_intro('App')"> App 開發 </span>
+                    <span class="teacher">賴璉錡</span>
+                </td>
+                <td>資料結構與演算法; <span class="teacher">李俊宏</span></td>
+                <td>App 開發; <span class="teacher">賴璉錡</span></td>
+                <td>資料庫與後端; <span class="teacher">陳錫民</span></td>
+            </tr>
+            <tr>
+                <th>1:10-4:00</th>
+                <td>資料結構與演算法; <span class="teacher">李俊宏</span></td>
+                <td>進階網頁設計; <span class="teacher">薛念林</span></td>
+                <td>資料庫與後端; <span class="teacher">陳錫民</span></td>
+                <td>進階網頁設計; <span class="teacher">薛念林</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class='course_intro_div'>
+        <h2 class='course_title'>App 設計</h2>
+        <div class="course_img">
+            <img src="https://picsum.photos/200?random=1" alt="">
+        </div>
+        <div class="course_desc">
+            <p class=>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut non sed reiciendis natus accusantium
+                voluptatum amet ipsam aliquid reprehenderit nulla! Omnis, libero. Harum repellendus voluptas est,
+                eveniet autem amet at.</p>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus obcaecati
+                veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus praesentium
+                deleniti molestias illo.</p>
+        </div>
+        <div class="course_grading">
+            <ul>
+                <li>平時：40%</li>
+                <li>期中考：30%</li>
+                <li>期末考：30%</li>
+            </ul>
+        </div>
+    </div>
+
+    <img src="https://picsum.photos/200" alt="">
+
+    <div class='course_intro_div'>
+        <h2 class='course_title'>資料結構與演算法</h2>
+        <div class="course_img">
+            <img src="https://picsum.photos/200?random=2" alt="">
+        </div>
+        <div class="course_desc">
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque ex recusandae nemo repellat rerum nihil
+                exercitationem laudantium mollitia sint, unde, natus id neque maxime aliquam architecto sed fuga,
+                debitis deserunt!
+            </p>
+
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus obcaecati
+                veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus praesentium
+                deleniti molestias illo.</p>
+        </div>
+        <div class="course_grading">
+            <ul>
+                <li>平時：40%</li>
+                <li>期中考：30%</li>
+                <li>期末考：30%</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class='course_intro_div'>
+        <h2 class='course_title'>資料庫與後端</h2>
+        <div class="course_img">
+            <img src="https://picsum.photos/200?random=3" alt="">
+        </div>
+        <div class="course_desc">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut non sed reiciendis natus accusantium
+                voluptatum amet ipsam aliquid reprehenderit nulla! Omnis, libero. Harum repellendus voluptas est,
+                eveniet autem amet at.</p>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus obcaecati
+                veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus praesentium
+                deleniti molestias illo.</p>
+        </div>
+        <div class="course_grading">
+            <ul>
+                <li>平時：40%</li>
+                <li>期中考：30%</li>
+                <li>期末考：30%</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class='course_intro_div'>
+        <h2 class='course_title'>進階網頁設計</h2>
+        <div class="course_img">
+            <img src="https://picsum.photos/200?random=4" alt="">
+        </div>
+        <div class="course_desc">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut non sed reiciendis natus accusantium
+                voluptatum amet ipsam aliquid reprehenderit nulla! Omnis, libero. Harum repellendus voluptas est,
+                eveniet autem amet at.</p>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quidem optio, facilis natus obcaecati
+                veniam porro. Eum totam, vitae maxime nostrum recusandae ipsum quis consectetur. Possimus praesentium
+                deleniti molestias illo.</p>
+        </div>
+        <div class="course_grading">
+            <ul>
+                <li>平時：40%</li>
+                <li>期中考：30%</li>
+                <li>期末考：30%</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+        // add onload() to check when the page will be reload 
+        function show() {
+            window.alert("Page on load");
+        }
+
+        function toggle_course_table() {
+            s_name = document.getElementById('s_name').value;
+            title = `${s_name}`;
+            semester = document.getElementById('semester').value;
+            title = `${s_name}; ${semester}`;
+            document.getElementById('title').innerHTML = title;
+
+            let course_table = document.getElementById('course_table');
+
+            // 當 style 設定在 internal/external, 判斷需用 '', 而不是 none
+            if (course_table.style.display == '' || course_table.style.display == 'none') {
+                course_table.style.display = 'block';
+            }
+            else course_table.style.display = 'none';
+        }
+
+        function course_intro(c) {
+
+        }
+    </script>
+
+</body>
+
+</html>

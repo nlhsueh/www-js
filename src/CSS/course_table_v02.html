@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Course Table</title>
+</head>
+<style>
+    body {
+        margin: auto;
+        width: 800px;
+    }
+
+    table {
+        margin: 20px;
+    }
+
+    h1,
+    h2,
+    form,
+    table {
+        text-align: center;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 3px;
+    }
+
+    .course_table {
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+
+    td .teacher {
+        display: block;
+        color: blue;
+        font-size: smaller;
+    }
+
+    .teacher::after {
+        content: ' 老師';
+    }
+
+    .course_name {
+        display: block;
+    }
+</style>
+
+<body>
+
+    <h1>Course Table</h1>
+    <form>
+        <label for="s_name">Name</label>
+        <input type="text" id="s_name" name="s_name" value="Nick">
+
+        <label for="semester">Semester</label>
+        <select name="semester" id="semester">
+            <option value="112-1">112-1</option>
+            <option value="112-2">112-2</option>
+            <option value="112-3">112-3</option>
+        </select>
+
+        <button type="button" onclick="toggle_course_table()">Show/Hide Table</button>
+    </form>
+
+
+    <div id="course_table" class="course_table">
+        <h2 id="title">Who?</h2>
+
+        <table>
+            <tr>
+                <th>-</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+            </tr>
+            <tr>
+                <th>9:10-12:00</th>
+                <td>App 開發; <span class="teacher">賴璉錡</span></td>
+                <td>資料結構與演算法; <span class="teacher">李俊宏</span></td>
+                <td>App 開發; <span class="teacher">賴璉錡</span></td>
+                <td>資料庫與後端; <span class="teacher">陳錫民</span></td>
+            </tr>
+            <tr>
+                <th>1:10-4:00</th>
+                <td>資料結構與演算法; <span class="teacher">李俊宏</span></td>
+                <td>進階網頁設計; <span class="teacher">薛念林</span></td>
+                <td>資料庫與後端; <span class="teacher">陳錫民</span></td>
+                <td>進階網頁設計; <span class="teacher">薛念林</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+
+        // add onload() to check when the page will be reload 
+        function show() {
+            window.alert("Page on load");
+        }
+
+        function toggle_course_table() {
+            s_name = document.getElementById('s_name').value;
+            title = `${s_name}`;
+            semester = document.getElementById('semester').value;
+            title = `${s_name}; ${semester}`;
+            document.getElementById('title').innerHTML = title;
+
+            let course_table = document.getElementById('course_table');
+
+            // 當 style 設定在 internal/external, 判斷需用 '', 而不是 none
+            if (course_table.style.display == '' || course_table.style.display == 'none') {
+                course_table.style.display = 'block';
+            }
+            else course_table.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>

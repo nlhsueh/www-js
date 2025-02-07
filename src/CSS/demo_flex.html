@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .flex-container {
+            display: flex;
+            background-color: DodgerBlue;
+            /* 換行 */
+            flex-wrap: wrap;
+            /* 置中 */
+            justify-content: center;
+        }
+
+        .flex-container>div {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .flex-container>img {
+            display: block;
+            width: 200px;
+            height: auto;
+            padding: 10px;
+
+        }
+
+        .flex-container>table,
+        td {
+            margin: 20px;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Create a Flex Container</h1>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <p>A Flexible Layout must have a parent element with the <em>display</em> property set to <em>flex</em>.</p>
+
+    <p>Direct child elements(s) of the flexible container automatically becomes flexible items.</p>
+
+    <div class="flex-container">
+        <img src="https://picsum.photos/id/684/600/400" alt="">
+        <img src="https://picsum.photos/id/500/600/400" alt="">
+        <img src="https://picsum.photos/id/600/600/400" alt="">
+    </div>
+
+    <p>hello</p>
+
+    <div class="flex-container">
+        <table>
+            <tr>
+                <td>abc</td>
+                <td>abc</td>
+                <td>abc</td>
+            </tr>
+            <tr>
+                <td>abc</td>
+                <td>abc</td>
+                <td>abc</td>
+            </tr>
+            <tr>
+                <td>abc</td>
+                <td>abc</td>
+                <td>abc</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>abc</td>
+                <td>abc</td>
+                <td>abc</td>
+            </tr>
+            <tr>
+                <td>abc</td>
+                <td>abc</td>
+                <td>abc</td>
+            </tr>
+            <tr>
+                <td>abc</td>
+                <td>abc</td>
+                <td>abc</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+</body>
+
+</html>

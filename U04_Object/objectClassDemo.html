@@ -1,0 +1,41 @@
+<body>
+
+    <h2>Object Class Demo</h2>
+
+    <p>Object</p>
+    <p id="object"></p>
+
+    <p>Class</p>
+    <p id="class"></p>
+
+    <script>
+        const person = {
+            name: 'Alice',
+            age: 30,
+            sayHello() {
+                s = `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+                document.getElementById("object").innerHTML = s;
+            }
+        };
+
+        class People {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            sayHello() {
+                s = `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+                document.getElementById("class").innerHTML = s;
+            }
+        }
+        person.sayHello();
+        nick = new People('nick', 30);
+        nick.sayHello();
+
+        albert = new People('Albert', 35);
+        albert.sayHello();
+    </script>
+
+</body>
+
+</html>

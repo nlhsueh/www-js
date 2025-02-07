@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <form>
+        <label for="fname">SSN:</label>
+        <input type="text" id="SSN" onchange="checkSSN()">
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+
+        <input type="submit" onclick="checkSSN()" value="Submit">
+    </form>
+
+    <script>
+        function checkSSN() {
+            let ssn = document.getElementById("SSN").value;
+            let reg = /^[a-zA-Z]\d{9}/;
+
+
+            if (ssn.length != 10) {
+                window.alert("length must = 10");
+            }
+            else if (!reg.test(ssn)) {
+                window.alert("pattern error");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <p id="demo"></p>
+    <form>
+        <input type="button" value="Go" onclick="doit()" />
+    </form>
+
+    <script>
+        /*
+        demo String slicing
+        */
+        let a = "IECS-FCU";
+
+        function doit() {
+            document.getElementById("demo").innerHTML = a;
+            a0 = a.slice(0, 1);
+            a = a.slice(1) + a0;
+        }
+
+    </script>
+</body>
+
+</html>

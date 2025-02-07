@@ -1,0 +1,55 @@
+body {
+    background-color: #F5F5DC;
+}
+
+div.question {
+    border: 2px solid black;
+    margin: 10% auto;
+    text-align: center;
+    padding: 25px;
+    border-radius: 30px;
+    width: 500px;
+    vertical-align: middle;
+    background-color: #FFEBCD;
+}
+
+button {
+    background-color: #555555;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: monospace;
+}
+
+div.information {
+    background-color: #7b7979;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+input {
+    border-radius: 5px;
+    padding: 3px;
+}
+
+span {
+    font-size: large;
+    font-weight: bold;
+    white-space: normal;
+}
+
+p.ps {
+    font-size: small;
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 5px;
+        }
+
+        .flex-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .flex-row-start {
+            align-items: flex-start !important;
+        }
+
+        .flex-col-start {
+            justify-content: flex-start !important;
+        }
+
+        .num-operator h2 {
+            align-self: flex-start;
+        }
+
+        .invisible {
+            display: none;
+        }
+
+        .backgroundBlock {
+            margin: 10px;
+            border: 2px solid black;
+            padding: 5px;
+        }
+
+
+        .small-input {
+            width: 50px;
+        }
+
+        .psuedo-small-input-style {
+            width: 54px;
+            min-height: 20.4px;
+            border: 2px;
+            padding: 1px 2px;
+        }
+
+        th,
+        td {
+            border: solid 2px black;
+            padding: 5px;
+        }
+
+        th {
+            width: 100px;
+            white-space: initial;
+        }
+
+        td {
+            width: 160px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="num-operator backgroundBlock">
+        <h2>1.Calculator</h2>
+        <div class="flex-row">
+            <form class="num-operator-form">
+                <input type="number" title="number1" placeholder="num1">
+                <input type="number" title="number2" placeholder="num2">
+            </form>
+            <div class="flex-row">
+                <button onclick="plus()">+</button>
+                <button onclick="minus()">-</button>
+                <button onclick="multiply()">×</button>
+                <button onclick="divided()">÷</button>
+            </div>
+        </div>
+        <p>Ansewr:<span class="answer"></span></p>
+    </div>
+
+    <div class="triangle-chekcer backgroundBlock">
+        <h2>2.Triangle Check</h2>
+        <div class="flex-row">
+            <form class="triangle-checker-form flex-col">
+                <div class="flex-row">
+                    <div class="psuedo-small-input-style" min="0">Edges1</div>
+                    <div class="psuedo-small-input-style" min="0">Edges2</div>
+                    <div class="psuedo-small-input-style" min="0">Edges3</div>
+                </div>
+            </form>
+            <div class="triangleCheck flex-col">
+                <div class="flex-row">
+                    <div>Is Triangle</div>
+                    <div>Is Equilateral</div>
+                    <div>Is Right</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-row">
+            <button onclick="addTriangleInput()">add new input box</button>
+            <button onclick="triangleChecker()">check</button>
+        </div>
+    </div>
+
+    <div class="fibonacci backgroundBlock">
+        <h2>3.Number of Fibonacci</h2>
+        <input type="number" title="nOfFibonacci" placeholder="Please enter the number" min="0">
+        <button onclick="getFibonacci()">check</button>
+        <p>N of fibonacci is:<span class="nFibonacci"></span></p>
+    </div>
+
+    <div class="primeChecker backgroundBlock">
+        <h2>4.Prime Number Check</h2>
+        <div>
+            <input type="number" title="primeNum" placeholder="Please enter the number">
+            <button onclick="primeCheck()">check</button>
+            <p class="primeCheckResult"></p>
+        </div>
+    </div>
+
+    <div class="showPrime backgroundBlock">
+        <h2>5.Show Prime Number List</h2>
+        <div>
+            <input type="number" title="primeLimit" placeholder="please enter the number" min="0">
+            <button onclick="showPrime()">show</button>
+            <p>List of prime numbers lower than input number:<span class="primeList"></span></p>
+        </div>
+    </div>
+
+    <div class="idAndEmailChecker backgroundBlock">
+        <h2>6.Input ID And Email To Check Format Currectly</h2>
+        <input type="text" title="id" placeholder="Please enter your ID" onchange="checkId()"><span
+            class="idCheckMark"></span>
+        <input type="text" title="email" placeholder="Please enter your email" onchange="checkEmail()"><span
+            class="emailCheckMark"></span>
+        <button onclick="checkIdAndEmail()">Submit</button>
+    </div>
+
+    <div class="string-cycle backgroundBlock">
+        <h2>7.String Cycle</h2>
+        <p class="cycle-string">Nehcled</p>
+        <button onclick="cycle()">Cycle</button>
+    </div>
+
+    <div class="splitSentence backgroundBlock">
+        <h2>8.Split Sentence</h2>
+        <input type="text" title="sentence" placeholder="Please enter the sentence" value="師太：「和尚、道長你們一起上吧，我趕時間。」">
+        <button onclick="splitSentence()">split</button>
+        <p>Sub sentence here: <span class="subSentence"></span></p>
+    </div>
+
+    <div class="split backgroundBlock">
+        <h2>9.Check The Date Of The Week</h2>
+        <input type="text" title="date" placeholder="Ex: 1970/1/1">
+        <button onclick="checkDayOfWeek()">check</button>
+        <p class="dateCheckResult"></p>
+    </div>
+
+    <div class="guessNumber backgroundBlock">
+        <h2>10.Guess Number Game</h2>
+        <button onclick="startGuessNumberGame()">start</button>
+        <div class="flex-row">
+            <div class="guessNumberGameInterface flex-row invisible">
+                <input type="number" title="guessNumberInput" placeholder="Please enter the number" min="0">
+                <button onclick="guessNumber()">guess</button>
+            </div>
+            <button class="invisible" onclick="restartGuessNumberGame()">restart</button>
+        </div>
+        <p class="guessResult invisible"></p>
+    </div>
+
+    <div class="cfTransform backgroundBlock">
+        <h2>11.Temperature Transformer</h2>
+        <div class="flex-row">
+            <p class="cToF">Celsius to Fahrenheit</p>
+            <p class="fToC invisible">Fahrenheit to Celsius</p>
+            <button onclick="changeCf()">⇄</button>
+        </div>
+        <form class="temperatures">
+            <input type="number" class="small-input">
+            <input type="number" class="small-input">
+            <input type="number" class="small-input">
+        </form>
+        <p>Transform Result: <span class="cfTransformResult"></span></p>
+        <div class="flex-row">
+            <button onclick="addTemperatureInput()">add new input box</button>
+            <button onclick="cfTransform()">transform</button>
+        </div>
+    </div>
+
+    <div class="checkFilenameExtension backgroundBlock">
+        <h2>12.Check Filename Extension</h2>
+        <input type="text" title="filename" placeholder="Please enter the filename">
+        <button onclick="getFilenameExtension()">check</button>
+        <p>Filename extension is<span class="filenameExtension"></span></p>
+    </div>
+
+    <div class="emailChecker backgroundBlock">
+        <h2>13.Input Email To Check Format Currectly</h2>
+        <input type="text" title="email2" placeholder="Please enter your email"><span class="emailCheckMark"></span>
+        <button onclick="checkEmailFormat()">check</button>
+    </div>
+
+    <div class="sumOfSquares backgroundBlock">
+        <h2>14.Show Sum of Squares List</h2>
+        <form class="sumOfSquaresInputs">
+            <input type="number" class="small-input">
+            <input type="number" class="small-input">
+            <input type="number" class="small-input">
+        </form>
+        <p>Sum of squares Result: <span class="sumOfSquaresResult"></span></p>
+        <div class="flex-row">
+            <button onclick="addSumOfSquaresInput()">add new input box</button>
+            <button onclick="getSumofSquaresInput()">coculate</button>
+        </div>
+    </div>
+
+    <div class="filterPopulation backgroundBlock">
+        <h2>15&16.Filter City Population Lower Than 3 Million & Sort</h2>
+        <div class="flex-row flex-row-start">
+            <pre>Cities = <code class="cities"></code></pre>
+            <pre>Filter Cities = <code class="filterCities"></code></pre>
+            <pre>Filter Cities Sort = <code class="filterCitiesSort"></code></pre>
+        </div>
+        <button onclick="filterPopulation()">filter</button>
+        <button onclick="sortFilterPopulation()">sort</button>
+    </div>
+
+    <div class="grades backgroundBlock">
+        <h2>17.Subject & Grades</h2>
+        <button onclick="calculateGrades()">refresh</button>
+        <table>
+            <tr class="subject">
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Average</th>
+            </tr>
+            <tr class="student1">
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="student2">
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="student3">
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <table>
+            <tr class="subject2">
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr class="scoreAverage">
+                <th>Average<br>Score</th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="highScoreStudent">
+                <th>High Score Student</th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="exercise.js"></script>
+</body>
+</html>

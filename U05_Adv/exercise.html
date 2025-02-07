@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        let cities = [
+            { name: 'Los Angeles', population: 3792621 },
+            { name: 'New York', population: 8175133 },
+            { name: 'Chicago', population: 2695598 },
+            { name: 'Houston', population: 2099451 },
+            { name: 'Philadelphia', population: 1526006 }
+        ];
+
+        let big_city = cities.filter(c => c.population > 3000000);
+        console.log(big_city);
+
+        /*
+                cities.forEach(
+                    function (c) {
+                        if (c.population > 3000000) {
+                            console.log("c.name");
+                        }
+                    }
+                ); 
+        
+                for (let i=0; i<cities.length; i++) {
+                    if (cities[i].population > 30000) {
+                        console.log(c.name);
+                    }
+                } 
+                */
+
+
+        cities
+            .filter(city => city.population < 3000000)
+            .sort(function (c1, c2) {
+                return c1.population - c2.population;
+            })
+            .map(city => console.log(city.name + ':' + city.population));
+
+        // console.log(sorted_city);
+
+
+        let all_are_big_city = cities.every(c => c.population > 1000000);
+        console.log("All are big city: " + all_are_big_city);
+
+        // let numbers = [1, 2, 3, 4, 5];
+        // let newNumbers = numbers.slice();
+        // newNumbers.map( s => console.log(s));
+
+        let s = "師太：「和尚、道長你們一起上吧，我趕時間。」";
+        let sentences = s.split(/[：,「,，,。,」,、]/);
+        let p = sentences.join("");
+        // print (p);
+        console.log(sentences.join(" "));
+
+        function print(s) {
+            console.log(s);
+        }
+
+
+        // object, property and key
+        let website = {
+            title: 'JavaScript Tutorial',
+            url: 'https://www.javascripttutorial.net',
+            tags: ['es6', 'javascript', 'node.js', 'reactjs', 'react native']
+        };
+
+        for (const key in website) {
+            // console.log(key);
+            print(website[key]);
+        }
+
+
+        // object reference
+        let x = { name: 'John' };
+        let y = x;
+        y.name = "Elly";
+        print(x.name);
+
+
+        // passing the object reference
+        function withdraw(b, amount) {
+            b.amount -= amount;
+        }
+
+        let bank = {
+            amount: 10000
+        };
+
+        withdraw(bank, 1000);
+        console.log("The balance is: " + bank.amount);
+
+
+        // pattern
+        let message = 'Hi, are you there? hi, HI...';
+        let re = /hi/gi;
+
+        let matches = [];
+        let match;
+        do {
+            match = re.exec(message);
+            if (match) {
+                matches.push(match);
+            }
+        } while (match != null)
+
+        console.dir(matches);
+
+
+        // replace and reg
+        let str = "Are you OK? Yes, I'm OK.";
+        let result = str.replace(/OK/, 'fine');
+
+        console.log(result);
+
+
+        // reg and digit char
+        let phone = '+1-(408)-555-0105';
+        re = /\d/g;
+
+        let numbers = phone.match(re);
+        let phoneNo = numbers.join('');
+
+        console.log(phoneNo);
+
+        // reg and word
+        let address = "103 my home is at No 4, 100 Lane, SA road";
+        re = /\w+/g;
+        print(address.match(re).join("-"));
+
+
+        // reg and time
+        tset = ['12:05', '1:02', '2pm', 'AM 9:01', '04:99'];
+        for (let t of tset) {
+            let isValid = /^\d\d:\d\d$/.test(t);
+            print(t + ": " + isValid);
+        }
+
+
+        // console.log(document.body);
+        // // 顯示 javascript 中 DOM 完整的物件資訊
+        // console.dir(document.body);
+
+
+        var menu = [
+            {
+                title: '香雞排',
+                price: '70',
+            },
+            {
+                title: '牛排',
+                price: '350',
+            },
+            {
+                title: '多拿滋',
+                price: '55',
+            },
+            {
+                title: '可樂',
+                price: '29',
+            },
+        ];
+        console.table(menu);
+
+    </script>
+</body>
+
+</html>

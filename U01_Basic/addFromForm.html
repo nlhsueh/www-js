@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add from from</title>
+    <style>
+        input,
+        label {
+            display: block;
+        }
+    </style>
+    <script>
+        function string_add() {
+            let x = document.getElementById("n1").value;
+            let y = document.getElementById("n2").value;
+            window.alert(x + y);
+        }
+        function int_add() {
+            let x = document.getElementById("n1").value;
+            let y = document.getElementById("n2").value;
+            p = parseInt(x);
+            q = parseInt(y)
+            window.alert(p + q);
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="number" id="n1" value="12">
+        <input type="number" id="n2" value="34">
+        <input type="button" onclick="string_add()" value="Add as String concatenation">
+        <input type="button" onclick="int_add()" value="Add as int add">
+    </form>
+
+</body>
+
+</html>
